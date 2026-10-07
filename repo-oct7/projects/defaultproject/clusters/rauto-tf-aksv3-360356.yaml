@@ -134,6 +134,26 @@ spec:
           vmSize: Standard_B4ms
           vnetSubnetID: /subscriptions/a2252eb2-7a25-432b-a5ec-e18eba6f26b1/resourceGroups/shobhit-fnf-nw-rg/providers/Microsoft.Network/virtualNetworks/shobhit-fnf-vnet/subnets/default
         type: Microsoft.ContainerService/managedClusters/agentPools
+      - apiVersion: "2023-07-01"
+        name: pool3
+        properties:
+          count: 2
+          enableAutoScaling: true
+          maxCount: 2
+          maxPods: 40
+          minCount: 1
+          mode: System
+          nodeLabels:
+            node-type: pool1
+          orchestratorVersion: 1.36.3
+          osType: Linux
+          tags:
+            email: automation@rafay.co
+            env: dev
+          type: VirtualMachineScaleSets
+          vmSize: Standard_B4ms
+          vnetSubnetID: /subscriptions/a2252eb2-7a25-432b-a5ec-e18eba6f26b1/resourceGroups/shobhit-fnf-nw-rg/providers/Microsoft.Network/virtualNetworks/shobhit-fnf-vnet/subnets/default
+        type: Microsoft.ContainerService/managedClusters/agentPools
       resourceGroupName: shobhit-rg
   sharing:
     enabled: true
