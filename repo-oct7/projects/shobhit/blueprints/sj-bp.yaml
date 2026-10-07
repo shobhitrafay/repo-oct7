@@ -7,21 +7,18 @@ spec:
   base:
     name: minimal
     version: 4.3.1
-  componentsCriticality:
-  - name: sj-addon2
-  - name: sj-addon1
   customAddons:
   - isOptional: true
     name: sj-addon1
-    version: v1
+    version: v3
   - isOptional: true
     name: sj-addon2
-    version: v1
+    version: v3
   defaultAddons:
     monitoring:
       gpuOperator: {}
   driftWebhook:
     enabled: true
   type: custom
-  version: v1
+  version: v2
   versionState: active
