@@ -1,0 +1,9 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: sj-bp
+  project: shobhit
+spec:
+  driftWebhook:
+    enabled: true
+  type: custom
