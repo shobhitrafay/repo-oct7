@@ -80,8 +80,8 @@ spec:
             skip-nodes-with-local-storage: "true"
             skip-nodes-with-system-pods: "true"
           autoUpgradeProfile:
-            nodeOsUpgradeChannel: NodeImage
-            upgradeChannel: patch
+            nodeOsUpgradeChannel: None
+            upgradeChannel: stable
           disableLocalAccounts: false
           dnsPrefix: rauto-terraform-aks-17381
           enableRBAC: true
