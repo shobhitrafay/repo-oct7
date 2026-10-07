@@ -8,7 +8,7 @@ metadata:
   project: defaultproject
 spec:
   blueprint:
-    name: minimal
+    name: default-aks
     version: latest
   cloudCredentials: rauto_119880885
   config:
