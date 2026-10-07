@@ -1,0 +1,91 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: rauto-aks-import-1382
+  project: defaultproject
+spec:
+  blueprint:
+    name: default-aks
+  cloudCredentials: rauto_588082595
+  config:
+    kind: aksClusterConfig
+    metadata:
+      name: rauto-aks-import-1382
+    spec:
+      managedCluster:
+        apiVersion: "2023-11-01"
+        identity:
+          type: SystemAssigned
+        location: centralindia
+        properties:
+          autoUpgradeProfile:
+            nodeOsUpgradeChannel: NodeImage
+            upgradeChannel: none
+          disableLocalAccounts: false
+          dnsPrefix: rauto-aks--qa-automation-a2252e
+          enableRBAC: true
+          kubernetesVersion: 1.35.8
+          linuxProfile:
+            adminUsername: azureuser
+            ssh:
+              publicKeys:
+              - keyData: |
+                  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDh8kEOzCp0tgkHIxFby+5Uxv+SOkJ8uO4jdNOvOUckqzUvctqFQUolfDsCNyIkwc/Ef6t8Wx1T1croxni4IVC3iPHtjl+DjXGUdzH1uyk+Ezxf5r8a7DpwKvNzeaJk3nZFlh+hhvgSY/HS8ihDh6x+Lro9JFwH5fFAeIfX9TOaRjmM4E8R9gmA5oonENMEpy1Ty1TE9A8Uv0dqqa996VmoTNdcDTCITEM179yK5JUSKH7xRV+dq6mLHDobI//v9R9u2Nx7oxt0l/LM3x2khnO85DMEbagqocnCOECpv/tO2N7nXy2rQjihIwy4w27Yyu8LzqD48Tre+y6OnllWUIUkVvzGft1BQHX8BMowDnPPWapuJOkWBb5Z3S6j7nRjqDVW2aUTa4L3s73CxccP9HnGrfwPISAeNU0YsFlEf1jCn9sRM83xZyJIj/6tVpKiuYQoSKjbr4VN2ZfJ6ddzyvkrqpknKL7Lo8haC0Niasnh9ZvjqjLWZ/eGxbhIKJCMmHBiqkscbhYQanKTMDfadW9smxTDZq1dDa/5Row19Z3mUhbA314pBsWWbIDq9fXxuQDFgclGIbeQpdANAXeLxPmZ35zMC4D1Yp7oOiKKcNIRfpETKi270QxYA68P00ipZa6j0Be1YuuYVoVPggAO4iuJaNIbVeC6ZbHUPFPvn6Wl5w== mansukim+r@gmail.com
+          networkProfile:
+            dnsServiceIP: 10.0.0.10
+            loadBalancerSku: standard
+            networkDataplane: azure
+            networkPlugin: azure
+            networkPluginMode: overlay
+            networkPolicy: none
+            podCidr: 10.244.0.0/16
+            serviceCidr: 10.0.0.0/16
+          nodeProvisioningProfile:
+            mode: Manual
+          nodeResourceGroup: MC_qa-automation_rauto-aks-import-1382_centralindia
+          oidcIssuerProfile:
+            enabled: true
+          powerState:
+            code: Running
+        sku:
+          name: Base
+          tier: Free
+        type: Microsoft.ContainerService/managedClusters
+      nodePools:
+      - apiVersion: "2023-11-01"
+        name: rng11382
+        properties:
+          count: 1
+          maxPods: 250
+          mode: System
+          nodeImageVersion: AKSUbuntu-2404gen2containerd-202609.15.0
+          orchestratorVersion: 1.35.8
+          osDiskSizeGB: 128
+          osType: Linux
+          type: VirtualMachineScaleSets
+          upgradeSettings:
+            maxSurge: 10%
+          vmSize: Standard_B4ms
+        type: Microsoft.ContainerService/managedClusters/agentPools
+      - apiVersion: "2023-11-01"
+        name: rng21382
+        properties:
+          count: 1
+          maxPods: 250
+          mode: User
+          nodeImageVersion: AKSUbuntu-2404gen2containerd-202609.15.0
+          nodeLabels:
+            check1: value1
+          nodeTaints:
+          - check1=value1:NoSchedule
+          orchestratorVersion: 1.35.8
+          osDiskSizeGB: 128
+          osType: Linux
+          type: VirtualMachineScaleSets
+          upgradeSettings:
+            maxSurge: 10%
+          vmSize: Standard_B4ms
+        type: Microsoft.ContainerService/managedClusters/agentPools
+      resourceGroupName: qa-automation
+  proxyConfig: {}
+  type: aks
