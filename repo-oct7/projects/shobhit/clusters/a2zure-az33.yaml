@@ -31,7 +31,7 @@ spec:
           disableLocalAccounts: false
           dnsPrefix: azure-az-dns
           enableRBAC: true
-          kubernetesVersion: 1.34.7
+          kubernetesVersion: 1.35.0
           networkProfile:
             loadBalancerSku: standard
             networkPlugin: kubenet
@@ -51,7 +51,7 @@ spec:
           maxPods: 110
           minCount: 1
           mode: System
-          orchestratorVersion: 1.34.7
+          orchestratorVersion: 1.35.0
           osType: Linux
           type: VirtualMachineScaleSets
           vmSize: Standard_DS2_v2
