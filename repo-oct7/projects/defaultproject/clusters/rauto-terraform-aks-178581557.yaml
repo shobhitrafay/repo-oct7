@@ -101,7 +101,7 @@ spec:
           - "1"
           - "2"
           - "3"
-          count: 3
+          count: 1
           enableAutoScaling: true
           maxCount: 5
           maxPods: 30
@@ -127,7 +127,7 @@ spec:
           - "1"
           - "2"
           - "3"
-          count: 2
+          count: 3
           enableAutoScaling: true
           maxCount: 5
           maxPods: 30
