@@ -68,7 +68,7 @@ spec:
           disableLocalAccounts: false
           dnsPrefix: rauto-terraform-aks-178581557
           enableRBAC: true
-          kubernetesVersion: 1.36.2
+          kubernetesVersion: 1.36.3
           linuxProfile:
             adminUsername: iamadmin
             ssh:
