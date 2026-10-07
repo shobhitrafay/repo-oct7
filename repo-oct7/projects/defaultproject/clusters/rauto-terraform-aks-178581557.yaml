@@ -153,8 +153,7 @@ spec:
   sharing:
     enabled: false
     projects:
-    - name: rauto-project-658975237
-    - name: rauto-project-one-658975237
+    - name: '*'
   systemComponentsPlacement:
     daemonSetOverride:
       tolerations:
