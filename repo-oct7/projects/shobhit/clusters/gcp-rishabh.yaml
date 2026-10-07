@@ -5,11 +5,8 @@ metadata:
   project: shobhit
 spec:
   blueprint:
-    name: optiona-bp4
-    optionalAddons:
-    - hello-addon
-    - abcdefgh
-    version: v4
+    name: minimal
+    version: latest
   cloudCredentials: shobhit_gcp
   config:
     controlPlaneVersion: "1.34"
