@@ -5,8 +5,8 @@ metadata:
   project: defaultproject
 spec:
   blueprint:
-    name: custom-bp-aks-1791401925971-ahpl
-    version: v2
+    name: default-aks
+    version: latest
   cloudCredentials: rauto_200047473
   config:
     kind: aksClusterConfig
