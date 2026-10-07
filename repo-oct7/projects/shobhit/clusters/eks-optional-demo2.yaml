@@ -1,0 +1,43 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: eks-optional-demo2
+  project: shobhit
+spec:
+  blueprint:
+    name: optiona-bp4
+    version: v4
+  cloudCredentials: shobhit_aws
+  config:
+    addons:
+    - name: aws-ebs-csi-driver
+      version: latest
+    managedNodeGroups:
+    - desiredCapacity: 2
+      disableIMDSv1: false
+      disablePodIMDS: false
+      ebsOptimized: false
+      efaEnabled: false
+      enableDetailedMonitoring: false
+      instanceType: t3.xlarge
+      maxSize: 3
+      minSize: 1
+      name: ng-1
+      spot: false
+      version: "1.32"
+      volumeEncrypted: false
+      volumeType: gp3
+    metadata:
+      name: eks-optional-demo2
+      region: us-west-2
+      version: "1.32"
+    network:
+      cni:
+        name: aws-cni
+    vpc:
+      autoAllocateIPv6: false
+      cidr: 192.168.0.0/16
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: true
+  type: aws-eks
