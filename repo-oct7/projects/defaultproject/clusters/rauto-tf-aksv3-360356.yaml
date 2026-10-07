@@ -67,7 +67,7 @@ spec:
           identityProfile:
             kubeletIdentity:
               resourceId: /subscriptions/a2252eb2-7a25-432b-a5ec-e18eba6f26b1/resourceGroups/shobhit-fnf-cluster-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/shobhit-kubelet-identity
-          kubernetesVersion: 1.36.2
+          kubernetesVersion: 1.36.3
           linuxProfile:
             adminUsername: iamadmin
             ssh:
