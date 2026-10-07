@@ -39,12 +39,13 @@ spec:
           cpu: 500m
           memory: 1000Mi
   drift:
-    action: Notify
+    action: Deny
     enabled: true
-  driftWebhook: {}
+  driftWebhook:
+    enabled: true
   namespaceConfig:
     enableSync: true
-    syncType: Managed
+    syncType: Unmanaged
   opaPolicy:
     opaPolicy:
     - name: rauto-policy-1791398002632-op69
@@ -56,5 +57,5 @@ spec:
     fleetValues:
     - custom-bp-aks-1791398009153-5b4h
   type: custom
-  version: v1
+  version: v2
   versionState: active
