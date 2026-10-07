@@ -1,0 +1,35 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: eks-cluster-v1
+  project: defaultproject
+spec:
+  blueprint:
+    name: rishabh-latest-bp
+    version: v2
+  cloudCredentials: shobhit_aws
+  config:
+    addons:
+    - name: coredns
+      version: latest
+    - name: kube-proxy
+      version: latest
+    - name: vpc-cni
+      version: latest
+    - name: aws-ebs-csi-driver
+      version: latest
+    metadata:
+      name: eks-cluster-v1
+      region: us-west-1
+      version: "1.35"
+    nodeGroups:
+    - name: ng-1
+    vpc:
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: false
+  sharing:
+    enabled: true
+    projects:
+    - name: shobhit
+  type: aws-eks

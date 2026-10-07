@@ -1,0 +1,23 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: rk-optional-test
+  project: defaultproject
+spec:
+  base:
+    name: minimal
+    version: 4.3.1
+  customAddons:
+  - name: hello-addon
+    version: v1
+  - isOptional: true
+    name: nginx-web
+    version: v1
+  defaultAddons:
+    monitoring:
+      gpuOperator: {}
+  driftWebhook:
+    enabled: true
+  type: custom
+  version: v2
+  versionState: active

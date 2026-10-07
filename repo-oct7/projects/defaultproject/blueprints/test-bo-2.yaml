@@ -1,0 +1,32 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: test-bo-2
+  project: defaultproject
+spec:
+  base:
+    name: default
+    version: 4.3.1
+  customAddons:
+  - dependsOn:
+    - simple-addon
+    isOptional: true
+    name: hello-addon
+    version: v1
+  - name: nginx-web
+    version: v1
+  - name: rauto-addon-1-438988673
+    version: v1
+  - name: simple-addon
+    version: v1
+  defaultAddons:
+    enableIngress: true
+    enableLocalStorage: true
+    enableMonitoring: true
+    monitoring:
+      gpuOperator: {}
+  driftWebhook:
+    enabled: true
+  type: golden
+  version: v3
+  versionState: active

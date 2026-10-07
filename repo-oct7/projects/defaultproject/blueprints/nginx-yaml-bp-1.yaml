@@ -1,0 +1,23 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: nginx-yaml-bp-1
+  project: defaultproject
+spec:
+  base:
+    name: minimal
+    version: 4.3.0
+  componentsCriticality:
+  - name: nginx-yaml
+  customAddons:
+  - isOptional: true
+    name: nginx-yaml
+    version: v1
+  defaultAddons:
+    monitoring:
+      gpuOperator: {}
+  driftWebhook:
+    enabled: true
+  type: custom
+  version: v4
+  versionState: active

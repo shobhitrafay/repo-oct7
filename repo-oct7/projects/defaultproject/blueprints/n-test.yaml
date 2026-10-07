@@ -1,0 +1,31 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: n-test
+  project: defaultproject
+spec:
+  base:
+    name: default
+    version: 4.3.1
+  customAddons:
+  - isOptional: true
+    name: elasticsearchtestaddon1
+    version: v1
+  - isOptional: true
+    name: custom-alert-manager
+    version: v1
+  defaultAddons:
+    enableIngress: true
+    enableLocalStorage: true
+    enableMonitoring: true
+    monitoring:
+      gpuOperator: {}
+  driftWebhook:
+    enabled: true
+  sharing:
+    enabled: true
+    projects:
+    - name: '*'
+  type: custom
+  version: v2
+  versionState: draft

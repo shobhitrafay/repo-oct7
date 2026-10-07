@@ -1,0 +1,30 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: rtyujs
+  project: defaultproject
+spec:
+  base:
+    name: default
+    version: 4.3.1
+  customAddons:
+  - isOptional: true
+    name: rauto-addon-1-860493621
+    version: v1
+  - isOptional: true
+    name: rauto-addon-1-858967548
+    version: v1
+  - isOptional: true
+    name: rauto-addon-1-507877798
+    version: v1
+  defaultAddons:
+    enableIngress: true
+    enableLocalStorage: true
+    enableMonitoring: true
+    monitoring:
+      gpuOperator: {}
+  driftWebhook:
+    enabled: true
+  type: custom
+  version: bh
+  versionState: active

@@ -1,0 +1,59 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: rautocdktf-aks-827316
+  project: defaultproject
+spec:
+  blueprint:
+    name: rautocdktf-blueprint-827316
+    version: v2.0
+  cloudCredentials: rautocdktf-cloudp-827316
+  config:
+    kind: aksClusterConfig
+    metadata:
+      name: rautocdktf-aks-827316
+    spec:
+      managedCluster:
+        apiVersion: "2023-11-01"
+        identity:
+          type: SystemAssigned
+        location: centralindia
+        properties:
+          addonProfiles:
+            azurePolicy:
+              enabled: true
+          disableLocalAccounts: false
+          dnsPrefix: rautocdktf-aks-827316
+          kubernetesVersion: 1.36.3
+          networkProfile:
+            dnsServiceIP: 10.0.0.10
+            loadBalancerSku: Standard
+            networkPlugin: azure
+            networkPluginMode: overlay
+            podCidr: 192.168.0.0/16
+            serviceCidr: 10.0.0.0/16
+          nodeResourceGroup: qa-automation-node-827316
+          powerState:
+            code: Stopped
+        type: Microsoft.ContainerService/managedClusters
+      nodePools:
+      - apiVersion: "2023-11-01"
+        name: primary
+        properties:
+          count: 2
+          enableAutoScaling: true
+          maxCount: 2
+          maxPods: 40
+          minCount: 1
+          mode: System
+          orchestratorVersion: 1.36.3
+          osType: Linux
+          type: VirtualMachineScaleSets
+          vmSize: Standard_B4ms
+        type: Microsoft.ContainerService/managedClusters/agentPools
+      resourceGroupName: qa-automation
+  sharing:
+    enabled: false
+    projects:
+    - name: rautocdktf-project-827316
+  type: aks

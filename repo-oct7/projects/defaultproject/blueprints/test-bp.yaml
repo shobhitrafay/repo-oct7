@@ -1,0 +1,34 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: test-bp
+  project: defaultproject
+spec:
+  base:
+    name: default
+    version: 4.3.1
+  customAddons:
+  - isOptional: true
+    name: abcdefgh
+    version: v1
+  - name: elasticsearchtestaddon1
+    version: v1
+  - isOptional: true
+    name: hello-addon
+    version: v1
+  - isOptional: true
+    name: nginx-web
+    version: v1
+  - name: nginx-yaml
+    version: v1
+  defaultAddons:
+    enableIngress: true
+    enableLocalStorage: true
+    enableMonitoring: true
+    monitoring:
+      gpuOperator: {}
+  driftWebhook:
+    enabled: true
+  type: custom
+  version: v2
+  versionState: draft

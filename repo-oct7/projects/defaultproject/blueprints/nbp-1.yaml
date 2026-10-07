@@ -1,0 +1,23 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: nbp-1
+  project: defaultproject
+spec:
+  base:
+    name: minimal
+    version: 4.3.1
+  customAddons:
+  - name: abcdefgh
+    version: v1
+  - name: custom-alert-manager
+    version: v1
+  defaultAddons:
+    enableIngress: true
+    monitoring:
+      gpuOperator: {}
+  driftWebhook:
+    enabled: true
+  type: custom
+  version: v1
+  versionState: active

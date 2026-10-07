@@ -1,0 +1,25 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: test-15
+  project: defaultproject
+spec:
+  base:
+    name: default
+    version: 4.3.1
+  componentsCriticality:
+  - name: kmkkm
+  customAddons:
+  - name: kmkkm
+    version: v1
+  defaultAddons:
+    enableIngress: true
+    enableLocalStorage: true
+    enableMonitoring: true
+    monitoring:
+      gpuOperator: {}
+  driftWebhook:
+    enabled: true
+  type: custom
+  version: nano
+  versionState: active

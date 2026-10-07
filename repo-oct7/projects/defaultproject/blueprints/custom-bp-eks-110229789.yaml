@@ -1,0 +1,85 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: custom-bp-eks-110229789
+  project: defaultproject
+spec:
+  base:
+    name: default
+    version: 4.3.1
+  componentsCriticality:
+  - name: rauto-addon-18234725
+  - name: rauto-addon-458592194
+  - name: opa-policy
+  - name: network-policy
+  - name: cost-profile
+  costProfile:
+    name: rauto-costprofile-989438202
+    version: version-v1
+  customAddons:
+  - name: rauto-addon-18234725
+    version: v1
+  - dependsOn:
+    - rauto-addon-18234725
+    name: rauto-addon-458592194
+    version: v1
+  - name: rauto-addon-856328988
+    version: v1
+  defaultAddons:
+    csiSecretStoreConfig:
+      enableSecretRotation: true
+      providers:
+        aws: true
+      rotationPollInterval: 2m
+      syncSecrets: true
+    enableCsiSecretStore: true
+    enableIngress: true
+    enableMonitoring: true
+    monitoring:
+      helmExporter:
+        enabled: true
+      kubeStateMetrics:
+        enabled: true
+      metricsServer:
+        enabled: true
+      nodeExporter:
+        enabled: true
+      prometheusAdapter:
+        enabled: true
+      resources:
+        limits:
+          cpu: 500m
+          memory: 1000Mi
+  drift:
+    action: Deny
+    enabled: true
+  driftWebhook:
+    enabled: true
+  namespaceConfig:
+    enableSync: true
+    syncType: Unmanaged
+  networkPolicy:
+    policies:
+    - name: rauto-network-policy-360319242
+      version: v1.1
+    profile:
+      name: default
+      version: latest
+  opaPolicy:
+    opaPolicy:
+    - name: rauto-policy-732334779
+      version: v1
+    profile:
+      name: default
+      version: latest
+  placement:
+    fleetValues:
+    - custom-bp-eks-110229789
+  sharing:
+    enabled: true
+    projects:
+    - name: rauto-project-one-110229789
+    - name: rauto-project-110229789
+  type: custom
+  version: v3
+  versionState: active
