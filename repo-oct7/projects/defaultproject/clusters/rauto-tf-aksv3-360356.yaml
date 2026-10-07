@@ -95,7 +95,7 @@ spec:
       - apiVersion: "2023-07-01"
         name: pool1
         properties:
-          count: 2
+          count: 1
           enableAutoScaling: true
           maxCount: 2
           maxPods: 40
