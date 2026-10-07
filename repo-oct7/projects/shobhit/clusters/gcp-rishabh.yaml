@@ -8,6 +8,7 @@ spec:
     name: sj-bp
     optionalAddons:
     - sj-addon1
+    - sj-addon1
     version: v1
   cloudCredentials: shobhit_gcp
   config:
@@ -38,7 +39,7 @@ spec:
         autoUpgrade: true
       name: default-nodepool
       nodeVersion: "1.34"
-      size: 6
+      size: 5
       upgradeSettings:
         config:
           maxSurge: 1
