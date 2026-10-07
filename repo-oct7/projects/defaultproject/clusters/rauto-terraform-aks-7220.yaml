@@ -222,8 +222,8 @@ spec:
           name: rauto-terraform-aks-7220-day2-wi
           resourceGroup: qa-automation
           tags:
-            department: rauto
-            owner: rauto
+            email: automation@rafay.co
+            team: qa
         roleAssignments:
         - name: Key Vault Secrets User
           scope: /subscriptions/a2252eb2-7a25-432b-a5ec-e18eba6f26b1/resourceGroups/qa-automation/providers/Microsoft.KeyVault/vaults/gautham-rauto-kv-1
