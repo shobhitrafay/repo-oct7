@@ -1,7 +1,7 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: a2zure-az
+  name: a2zure-az33
   project: shobhit
 spec:
   blueprint:
@@ -14,7 +14,7 @@ spec:
   config:
     kind: aksClusterConfig
     metadata:
-      name: a2zure-az
+      name: a2zure-az33
     spec:
       managedCluster:
         apiVersion: "2025-05-01"
