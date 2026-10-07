@@ -7,7 +7,7 @@ spec:
   blueprint:
     name: minimal
     version: latest
-  cloudCredentials: rauto_200047473
+  cloudCredentials: rauto_799235799
   config:
     kind: aksClusterConfig
     metadata:
@@ -136,7 +136,7 @@ spec:
         type: Microsoft.ContainerService/managedClusters/agentPools
       resourceGroupName: shobhit-rg
   sharing:
-    enabled: false
+    enabled: true
     projects:
     - name: rauto-project-1791401925971-ahpl
     - name: rauto-project-one-1791401925971-ahpl
