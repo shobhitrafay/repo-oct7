@@ -36,7 +36,7 @@ spec:
                 rotationPollInterval: 2m
               enabled: true
             azurePolicy:
-              enabled: false
+              enabled: true
             httpApplicationRouting:
               enabled: false
             omsAgent:
