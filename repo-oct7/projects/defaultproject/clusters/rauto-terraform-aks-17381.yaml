@@ -120,7 +120,7 @@ spec:
             code: Running
           securityProfile:
             workloadIdentity:
-              enabled: false
+              enabled: true
         sku:
           name: Base
           tier: Free
