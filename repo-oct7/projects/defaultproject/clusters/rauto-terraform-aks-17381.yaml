@@ -39,7 +39,7 @@ spec:
               weekly:
                 dayOfWeek: Friday
                 intervalWeeks: 1
-            startDate: "2024-08-09"
+            startDate: "2024-08-10"
             startTime: "15:00"
             utcOffset: "+05:30"
         type: Microsoft.ContainerService/managedClusters/maintenanceConfigurations
