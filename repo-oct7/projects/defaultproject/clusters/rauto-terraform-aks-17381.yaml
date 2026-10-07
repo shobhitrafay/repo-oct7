@@ -21,26 +21,13 @@ spec:
         name: aksManagedAutoUpgradeSchedule
         properties:
           maintenanceWindow:
-            durationHours: 5
+            durationHours: 6
             schedule:
               weekly:
-                dayOfWeek: Friday
+                dayOfWeek: Monday
                 intervalWeeks: 1
             startDate: "2024-08-14"
-            startTime: "13:30"
-            utcOffset: "+05:30"
-        type: Microsoft.ContainerService/managedClusters/maintenanceConfigurations
-      - apiVersion: "2024-01-01"
-        name: aksManagedNodeOSUpgradeSchedule
-        properties:
-          maintenanceWindow:
-            durationHours: 4
-            schedule:
-              weekly:
-                dayOfWeek: Friday
-                intervalWeeks: 1
-            startDate: "2024-08-10"
-            startTime: "15:00"
+            startTime: "14:00"
             utcOffset: "+05:30"
         type: Microsoft.ContainerService/managedClusters/maintenanceConfigurations
       managedCluster:
