@@ -6,9 +6,6 @@ metadata:
 spec:
   blueprint:
     name: sj-bp
-    optionalAddons:
-    - sj-addon1
-    - sj-addon2
     version: v2
   cloudCredentials: shobhit_azure
   config:
@@ -45,9 +42,9 @@ spec:
       - apiVersion: "2025-05-01"
         name: primary
         properties:
-          count: 1
+          count: 2
           enableAutoScaling: true
-          maxCount: 1
+          maxCount: 2
           maxPods: 110
           minCount: 1
           mode: System
