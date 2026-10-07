@@ -172,37 +172,6 @@ spec:
           vnetSubnetID: /subscriptions/a2252eb2-7a25-432b-a5ec-e18eba6f26b1/resourceGroups/shobhit-fnf-nw-rg/providers/Microsoft.Network/virtualNetworks/shobhit-fnf-vnet/subnets/default
         type: Microsoft.ContainerService/managedClusters/agentPools
       resourceGroupName: shobhit-rg
-      workloadIdentities:
-      - createIdentity: true
-        metadata:
-          location: centralindia
-          name: rauto-terraform-aks-17381-day0-wi
-          resourceGroup: shobhit-rg
-          tags:
-            department: rauto
-            owner: rauto
-        roleAssignments:
-        - name: Key Vault Secrets User
-          scope: /subscriptions/a2252eb2-7a25-432b-a5ec-e18eba6f26b1/resourceGroups/qa-automation/providers/Microsoft.KeyVault/vaults/gautham-rauto-kv-1
-        serviceAccounts:
-        - createAccount: true
-          metadata:
-            annotations:
-              role: dev
-            labels:
-              department: qa1
-              owner: rauto1
-            name: rauto-terraform-aks-17381-day0-wi-sa
-            namespace: aks-wi-ns-17381
-        - createAccount: true
-          metadata:
-            annotations:
-              role: dev
-            labels:
-              department: qa2
-              owner: rauto2
-            name: rauto-terraform-aks-17381-day0-wi-sa-static
-            namespace: aks-wi-ns-17381
   sharing:
     enabled: true
     projects:
