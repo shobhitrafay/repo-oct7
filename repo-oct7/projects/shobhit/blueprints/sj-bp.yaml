@@ -18,11 +18,10 @@ spec:
     name: sj-addon2
     version: v1
   defaultAddons:
-    enableIngress: true
     monitoring:
       gpuOperator: {}
   driftWebhook:
     enabled: true
   type: custom
   version: v1
-  versionState: draft
+  versionState: active
