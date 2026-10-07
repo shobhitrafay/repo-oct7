@@ -39,12 +39,13 @@ spec:
           cpu: 500m
           memory: 1000Mi
   drift:
-    action: Notify
+    action: Deny
     enabled: true
-  driftWebhook: {}
+  driftWebhook:
+    enabled: true
   namespaceConfig:
     enableSync: true
-    syncType: Managed
+    syncType: Unmanaged
   opaPolicy:
     opaPolicy:
     - name: rauto-policy-1791401919485-aykm
@@ -55,6 +56,11 @@ spec:
   placement:
     fleetValues:
     - custom-bp-aks-1791401925971-ahpl
+  sharing:
+    enabled: true
+    projects:
+    - name: rauto-project-1791401925971-ahpl
+    - name: rauto-project-one-1791401925971-ahpl
   type: custom
-  version: v1
+  version: v2
   versionState: active
