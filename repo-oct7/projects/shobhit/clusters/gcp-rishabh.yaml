@@ -8,7 +8,7 @@ spec:
     name: sj-bp
     optionalAddons:
     - sj-addon2
-    version: v2
+    version: v1
   cloudCredentials: shobhit_gcp
   config:
     controlPlaneVersion: "1.34"
