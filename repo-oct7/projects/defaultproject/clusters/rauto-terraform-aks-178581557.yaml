@@ -85,7 +85,7 @@ spec:
             serviceCidr: 10.0.0.0/16
           nodeResourceGroup: rauto-terraform-aks-178581557
           powerState:
-            code: Running
+            code: Stopped
         sku:
           name: Base
           tier: Free
