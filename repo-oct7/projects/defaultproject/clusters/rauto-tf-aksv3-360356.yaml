@@ -5,7 +5,7 @@ metadata:
   project: defaultproject
 spec:
   blueprint:
-    name: minimal
+    name: default-aks
     version: latest
   cloudCredentials: rauto_799235799
   config:
@@ -115,11 +115,11 @@ spec:
       - apiVersion: "2023-07-01"
         name: pool2
         properties:
-          count: 1
+          count: 3
           enableAutoScaling: true
-          maxCount: 1
+          maxCount: 3
           maxPods: 110
-          minCount: 1
+          minCount: 3
           mode: System
           nodeLabels:
             env: azure
