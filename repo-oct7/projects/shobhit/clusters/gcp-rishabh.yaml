@@ -8,6 +8,7 @@ spec:
     name: sj-bp
     optionalAddons:
     - sj-addon1
+    - sj-addon2
     version: v2
   cloudCredentials: shobhit_gcp
   config:
