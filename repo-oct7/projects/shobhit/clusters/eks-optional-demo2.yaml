@@ -5,8 +5,10 @@ metadata:
   project: shobhit
 spec:
   blueprint:
-    name: optiona-bp4
-    version: v4
+    name: sj-bp
+    optionalAddons:
+    - sj-addon1
+    version: v2
   cloudCredentials: shobhit_aws
   config:
     addons:
