@@ -57,7 +57,7 @@ spec:
             upgradeChannel: patch
           disableLocalAccounts: false
           dnsPrefix: rauto-cli-aksrauto-333225741-dns
-          kubernetesVersion: 1.36.3
+          kubernetesVersion: 1.36.4
           networkProfile:
             loadBalancerSku: standard
             networkPlugin: kubenet
