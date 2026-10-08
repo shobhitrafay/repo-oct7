@@ -1,0 +1,32 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: rauto-bp-tgl-sync-confirm-144830
+  project: defaultproject
+spec:
+  base:
+    name: default
+    version: 4.3.1
+  customAddons:
+  - name: rauto-tgl-ad1-144830
+    version: v1
+  - isOptional: true
+    name: rauto-tgl-ad2-144830
+    version: v1
+  - isOptional: true
+    name: rauto-tgl-ad5-144830
+    version: v1
+  - isOptional: true
+    name: rauto-tgl-ad6-144830
+    version: v1
+  defaultAddons:
+    enableIngress: true
+    enableLocalStorage: true
+    enableMonitoring: true
+    monitoring:
+      gpuOperator: {}
+  driftWebhook:
+    enabled: true
+  type: custom
+  version: v1
+  versionState: active
