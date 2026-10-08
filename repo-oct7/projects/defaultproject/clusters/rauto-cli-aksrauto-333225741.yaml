@@ -54,7 +54,7 @@ spec:
             enablePrivateClusterPublicFQDN: false
           autoUpgradeProfile:
             nodeOsUpgradeChannel: NodeImage
-            upgradeChannel: patch
+            upgradeChannel: stable
           disableLocalAccounts: false
           dnsPrefix: rauto-cli-aksrauto-333225741-dns
           kubernetesVersion: 1.36.4
