@@ -8,9 +8,6 @@ metadata:
 spec:
   blueprintConfig:
     name: sj-bp
-    optionalAddons:
-    - sj-addon1
-    - sj-addon2
     version: v4
   cloudCredentials: shobhit_azure
   config:
