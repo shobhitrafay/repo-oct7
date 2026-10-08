@@ -10,7 +10,7 @@ spec:
   blueprintConfig:
     name: rauto-aks-bp-844112360
     version: v2
-  cloudCredentials: cli-cprauto-byocni-844112360
+  cloudCredentials: cli-cprauto-372037328
   config:
     kind: aksClusterConfig
     metadata:
