@@ -6,7 +6,7 @@ metadata:
 spec:
   blueprintConfig:
     name: test-bp-ng
-    version: v2
+    version: v1
   cloudCredentials: shobhit_azure
   config:
     kind: aksClusterConfig
