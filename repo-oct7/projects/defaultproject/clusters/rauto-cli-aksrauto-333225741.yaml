@@ -78,11 +78,11 @@ spec:
       - apiVersion: "2021-05-01"
         name: pool1
         properties:
-          count: 1
+          count: 2
           enableAutoScaling: true
           maxCount: 2
           maxPods: 40
-          minCount: 1
+          minCount: 2
           mode: System
           nodeLabels:
             pool1migratekey: poool1migratevalue
