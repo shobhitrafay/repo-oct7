@@ -21,10 +21,10 @@ spec:
         name: aksManagedAutoUpgradeSchedule
         properties:
           maintenanceWindow:
-            durationHours: 4
+            durationHours: 5
             schedule:
               weekly:
-                dayOfWeek: Tuesday
+                dayOfWeek: Wednesday
                 intervalWeeks: 1
             startDate: "2024-07-16"
             startTime: "18:34"
@@ -34,10 +34,10 @@ spec:
         name: aksManagedNodeOSUpgradeSchedule
         properties:
           maintenanceWindow:
-            durationHours: 4
+            durationHours: 5
             schedule:
               weekly:
-                dayOfWeek: Tuesday
+                dayOfWeek: Wednesday
                 intervalWeeks: 1
             startDate: "2024-07-16"
             startTime: "18:34"
