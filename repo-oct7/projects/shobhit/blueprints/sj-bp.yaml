@@ -32,6 +32,10 @@ spec:
       resources: {}
   driftWebhook:
     enabled: true
+  sharing:
+    enabled: true
+    projects:
+    - name: phani-p2
   type: custom
   version: v2yaml-test
   versionState: active
