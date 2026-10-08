@@ -5,7 +5,11 @@ metadata:
   project: shobhit
 spec:
   blueprint:
-    name: minimal
+    name: sj-bp
+    optionalAddons:
+    - sj-addon1
+    - sj-addon2
+    version: v4
   config:
     autoApproveNodes: true
     installerTtl: 365
