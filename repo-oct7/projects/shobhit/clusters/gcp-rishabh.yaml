@@ -1,14 +1,13 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
+  labels:
+    ddddd: dd
   name: gcp-rishabh
   project: shobhit
 spec:
   blueprint:
     name: sj-bp
-    optionalAddons:
-    - sj-addon1
-    - sj-addon2
     version: v2
   cloudCredentials: shobhit_gcp
   config:
