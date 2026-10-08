@@ -8,7 +8,8 @@ spec:
     name: sj-bp
     optionalAddons:
     - sj-addon2
-    version: v3
+    - sj-addon1
+    version: v4
   cloudCredentials: shobhit_azure
   config:
     kind: aksClusterConfig
