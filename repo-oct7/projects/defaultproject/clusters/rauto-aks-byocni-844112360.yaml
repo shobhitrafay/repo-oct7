@@ -119,5 +119,5 @@ spec:
     enabled: true
     httpProxy: http://10.225.0.10:443/
     httpsProxy: http://10.225.0.10:443/
-    noProxy: 10.0.0.0/16,localhost,127.0.0.1,ingress-controller-v1-controller-admission.rafay-system.svc,secretstore-webhook.rafay-system.svc,10.225.0.0/24,az-prox-26feb-dns-z9v3wwih.hcp.centralindia.azmk8s.io,10.244.0.0/16,10.224.0.0/12,169.254.169.254,.hcp.centralindia.azmk8s.io,168.63.129.16,konnectivity,k8master.service.consul,rafay-drift-v3.rafay-system.svc,.privatelink.centralindia.azmk8s.io,privatelink.centralindia.azmk8s.io
+    noProxy: 10.0.0.0/16,localhost,127.0.0.1,ingress-controller-v1-controller-admission.rafay-system.svc,secretstore-webhook.rafay-system.svc,10.225.0.0/24,az-prox-26feb-dns-z9v3wwih.hcp.centralindia.azmk8s.io,10.244.0.0/16,10.224.0.0/12,169.254.169.254,.hcp.centralindia.azmk8s.io,168.63.129.16,konnectivity,k8master.service.consul,rafay-drift-v3.rafay-system.svc,.privatelink.centralindia.azmk8s.io,privatelink.centralindia.azmk8s.io,check.com
   type: aks
