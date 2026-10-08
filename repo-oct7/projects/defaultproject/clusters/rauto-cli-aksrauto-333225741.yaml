@@ -8,7 +8,8 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: default-aks
+    name: rauto-blueprint-7552590
+    version: v1
   cloudCredentials: cli-cprauto-333225741
   config:
     kind: aksClusterConfig
