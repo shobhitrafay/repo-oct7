@@ -62,6 +62,7 @@ spec:
             - rafay-drift-v3.rafay-system.svc
             - .privatelink.centralindia.azmk8s.io
             - privatelink.centralindia.azmk8s.io
+            - check.com
           ingressProfile:
             webAppRouting:
               enabled: true
