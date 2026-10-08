@@ -12,7 +12,8 @@ spec:
     version: v1
   - name: a-2-5318
     version: v1
-  - name: a-3-5318
+  - isOptional: true
+    name: a-3-5318
     version: v1
   defaultAddons:
     enableIngress: true
@@ -23,5 +24,5 @@ spec:
   driftWebhook:
     enabled: true
   type: custom
-  version: v1
+  version: v3
   versionState: active
