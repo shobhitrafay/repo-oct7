@@ -73,6 +73,8 @@ spec:
           maxPods: 40
           mode: System
           nodeLabels:
+            day2npkey: day2npvalue
+            pool1key: pool1value
             pool1migratekey: poool1migratevalue
           orchestratorVersion: 1.36.3
           osType: Linux
