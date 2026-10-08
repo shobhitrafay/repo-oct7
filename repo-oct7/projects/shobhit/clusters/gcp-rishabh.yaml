@@ -5,11 +5,8 @@ metadata:
   project: shobhit
 spec:
   blueprint:
-    name: sj-bp
-    optionalAddons:
-    - sj-addon2
-    - sj-addon1
-    version: v2
+    name: minimal
+    version: latest
   cloudCredentials: shobhit_gcp
   config:
     controlPlaneVersion: "1.34"
