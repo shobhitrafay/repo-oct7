@@ -1,0 +1,59 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  labels:
+    role: gk-qe
+    team: rafay-infra
+  name: rauto-cli-aksrauto-912649889
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: default-aks
+  cloudCredentials: cli-cprauto-912649889
+  config:
+    kind: aksClusterConfig
+    metadata:
+      name: rauto-cli-aksrauto-912649889
+    spec:
+      managedCluster:
+        apiVersion: "2021-05-01"
+        identity:
+          type: SystemAssigned
+        location: northcentralus
+        properties:
+          apiServerAccessProfile:
+            enablePrivateCluster: false
+            enablePrivateClusterPublicFQDN: false
+          disableLocalAccounts: false
+          dnsPrefix: rauto-cli-aksrauto-912649889-dns
+          kubernetesVersion: 1.36.3
+          networkProfile:
+            loadBalancerSku: standard
+            networkPlugin: kubenet
+            networkPolicy: calico
+        sku:
+          name: Basic
+          tier: Free
+        tags:
+          migrationtag: migratevalue
+        type: Microsoft.ContainerService/managedClusters
+      nodePools:
+      - apiVersion: "2021-05-01"
+        name: pool1
+        properties:
+          count: 1
+          enableAutoScaling: true
+          maxCount: 2
+          maxPods: 40
+          minCount: 1
+          mode: System
+          nodeLabels:
+            pool1migratekey: poool1migratevalue
+          orchestratorVersion: 1.36.3
+          osType: Linux
+          type: VirtualMachineScaleSets
+          vmSize: Standard_B4ms
+        type: Microsoft.ContainerService/managedClusters/agentPools
+      resourceGroupName: qa-automation
+  proxyConfig: {}
+  type: aks

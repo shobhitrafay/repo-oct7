@@ -1,0 +1,91 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  labels:
+    role: automation
+    team: rafay-infra
+  name: rauto-cli-aksrauto-333225741
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: default-aks
+  cloudCredentials: cli-cprauto-333225741
+  config:
+    kind: aksClusterConfig
+    metadata:
+      name: rauto-cli-aksrauto-333225741
+    spec:
+      maintenanceConfigurations:
+      - apiVersion: "2024-01-01"
+        name: aksManagedAutoUpgradeSchedule
+        properties:
+          maintenanceWindow:
+            durationHours: 4
+            schedule:
+              weekly:
+                dayOfWeek: Tuesday
+                intervalWeeks: 1
+            startDate: "2024-07-16"
+            startTime: "18:34"
+            utcOffset: "+05:30"
+        type: Microsoft.ContainerService/managedClusters/maintenanceConfigurations
+      - apiVersion: "2024-01-01"
+        name: aksManagedNodeOSUpgradeSchedule
+        properties:
+          maintenanceWindow:
+            durationHours: 4
+            schedule:
+              weekly:
+                dayOfWeek: Tuesday
+                intervalWeeks: 1
+            startDate: "2024-07-16"
+            startTime: "18:34"
+            utcOffset: "+05:30"
+        type: Microsoft.ContainerService/managedClusters/maintenanceConfigurations
+      managedCluster:
+        apiVersion: "2021-05-01"
+        identity:
+          type: SystemAssigned
+        location: northcentralus
+        properties:
+          apiServerAccessProfile:
+            enablePrivateCluster: false
+            enablePrivateClusterPublicFQDN: false
+          autoUpgradeProfile:
+            nodeOsUpgradeChannel: NodeImage
+            upgradeChannel: patch
+          disableLocalAccounts: false
+          dnsPrefix: rauto-cli-aksrauto-333225741-dns
+          kubernetesVersion: 1.36.3
+          networkProfile:
+            loadBalancerSku: standard
+            networkPlugin: kubenet
+            networkPolicy: calico
+          powerState:
+            code: Running
+        sku:
+          name: Basic
+          tier: Free
+        tags:
+          migrationtag: migratevalue
+        type: Microsoft.ContainerService/managedClusters
+      nodePools:
+      - apiVersion: "2021-05-01"
+        name: pool1
+        properties:
+          count: 1
+          enableAutoScaling: true
+          maxCount: 2
+          maxPods: 40
+          minCount: 1
+          mode: System
+          nodeLabels:
+            pool1migratekey: poool1migratevalue
+          orchestratorVersion: 1.36.3
+          osType: Linux
+          type: VirtualMachineScaleSets
+          vmSize: Standard_D2as_v5
+        type: Microsoft.ContainerService/managedClusters/agentPools
+      resourceGroupName: qa-automation
+  proxyConfig: {}
+  type: aks

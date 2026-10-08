@@ -1,0 +1,103 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  labels:
+    type: mks
+  name: rauto-cli-aws-hacluster-906150607
+  project: defaultproject
+spec:
+  blueprint:
+    name: default
+  config:
+    autoApproveNodes: true
+    highAvailability: true
+    kubeletConfigurationOverrides: |-
+      maxPods: 600
+      rotateCertificates: true
+    kubeletExtraArgs:
+      max-pods: "800"
+    kubernetesVersion: v1.37.0
+    location: sanjose-us
+    network:
+      cni:
+        name: Calico
+        version: 3.28.1
+      podSubnet: 10.244.0.0/16
+      serviceSubnet: 10.96.0.0/12
+    nodes:
+    - arch: amd64
+      hostname: ip-172-31-20-77
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.20.77
+      roles:
+      - Worker
+      - ControlPlane
+      ssh:
+        ipAddress: 184.72.162.44
+        port: "22"
+        privateKeyPath: /Users/shobhitjain/PycharmProjects/pythonProject/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-20-183
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.20.183
+      roles:
+      - Worker
+      - ControlPlane
+      ssh:
+        ipAddress: 184.73.147.153
+        port: "22"
+        privateKeyPath: /Users/shobhitjain/PycharmProjects/pythonProject/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-16-98
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.16.98
+      roles:
+      - Worker
+      - ControlPlane
+      ssh:
+        ipAddress: 3.92.22.65
+        port: "22"
+        privateKeyPath: /Users/shobhitjain/PycharmProjects/pythonProject/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-31-58
+      kubeletConfigurationOverrides: 'maxPods: 400'
+      kubeletExtraArgs:
+        max-pods: "50"
+      labels:
+        app: infra
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.31.58
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 13.218.16.245
+        port: "22"
+        privateKeyPath: /Users/shobhitjain/PycharmProjects/pythonProject/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+      taints:
+      - effect: NoSchedule
+        key: app
+        value: infra
+    - arch: amd64
+      hostname: ip-172-31-22-136
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.22.136
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 3.85.194.255
+        port: "22"
+        privateKeyPath: /Users/shobhitjain/PycharmProjects/pythonProject/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+  systemComponentsPlacement:
+    nodeSelector:
+      app: infra
+    tolerations:
+    - effect: NoSchedule
+      key: app
+      operator: Equal
+      value: infra
+  type: mks
