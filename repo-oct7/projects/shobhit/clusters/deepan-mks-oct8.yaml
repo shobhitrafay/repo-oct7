@@ -6,9 +6,7 @@ metadata:
 spec:
   blueprint:
     name: sj-bp
-    optionalAddons:
-    - sj-addon1
-    - sj-addon2
+    optionalAddons: []
     version: v4
   config:
     autoApproveNodes: true
