@@ -8,7 +8,8 @@ spec:
     name: minimal
     version: 4.3.1
   customAddons:
-  - name: sj-addon1
+  - isOptional: true
+    name: sj-addon1
     version: v3
   - isOptional: true
     name: sj-addon2
@@ -19,5 +20,5 @@ spec:
   driftWebhook:
     enabled: true
   type: custom
-  version: v3
+  version: v4
   versionState: active
