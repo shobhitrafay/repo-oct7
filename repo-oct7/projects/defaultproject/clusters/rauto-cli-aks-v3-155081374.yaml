@@ -1,0 +1,83 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  labels:
+    role: aks-qe
+    team: rafay-infra
+  name: rauto-cli-aks-v3-155081374
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: minimal
+  cloudCredentials: cli-cprauto-155081374
+  config:
+    kind: aksClusterConfig
+    metadata:
+      name: rauto-cli-aks-v3-155081374
+    spec:
+      managedCluster:
+        apiVersion: "2025-05-01"
+        identity:
+          type: SystemAssigned
+        location: northcentralus
+        properties:
+          addonProfiles:
+            azureKeyvaultSecretsProvider:
+              config:
+                enableSecretRotation: "true"
+                rotationPollInterval: 2m
+              enabled: true
+            azurePolicy:
+              enabled: true
+          apiServerAccessProfile:
+            enablePrivateCluster: false
+            enablePrivateClusterPublicFQDN: false
+          disableLocalAccounts: false
+          dnsPrefix: rauto-cli-aks-v3-155081374-dns
+          ingressProfile:
+            webAppRouting:
+              enabled: true
+              nginx:
+                defaultIngressControllerType: Internal
+          kubernetesVersion: 1.36.3
+          networkProfile:
+            dnsServiceIP: 10.0.0.10
+            loadBalancerSku: standard
+            networkPlugin: azure
+            serviceCidr: 10.0.0.0/16
+          nodeProvisioningProfile:
+            defaultNodePools: Auto
+            mode: Auto
+          oidcIssuerProfile:
+            enabled: true
+          powerState:
+            code: Running
+          securityProfile:
+            workloadIdentity:
+              enabled: true
+        sku:
+          name: Base
+          tier: Free
+        tags:
+          migrationtag: migratevalue
+        type: Microsoft.ContainerService/managedClusters
+      nodePools:
+      - apiVersion: "2025-05-01"
+        name: pool1
+        properties:
+          count: 2
+          kubeletConfig:
+            containerLogMaxFiles: 2
+            containerLogMaxSizeMB: 10
+          maxPods: 40
+          mode: System
+          nodeLabels:
+            pool1migratekey: poool1migratevalue
+          orchestratorVersion: 1.36.3
+          osType: Linux
+          type: VirtualMachineScaleSets
+          vmSize: Standard_D2as_v5
+        type: Microsoft.ContainerService/managedClusters/agentPools
+      resourceGroupName: qa-automation
+      subscriptionID: a2252eb2-7a25-432b-a5ec-e18eba6f26b1
+  type: aks

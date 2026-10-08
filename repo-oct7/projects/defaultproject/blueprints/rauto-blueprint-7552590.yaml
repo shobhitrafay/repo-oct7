@@ -1,0 +1,26 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: rauto-blueprint-7552590
+  project: defaultproject
+spec:
+  base:
+    name: default-aks
+    version: 4.3.1
+  customAddons:
+  - name: rauto-addon-9146416
+    version: v1
+  - name: rauto-addon-1920593
+    version: v1
+  defaultAddons:
+    enableIngress: true
+    enableMonitoring: true
+    monitoring:
+      gpuOperator: {}
+      metricsServer: {}
+      prometheusAdapter: {}
+  driftWebhook:
+    enabled: true
+  type: custom
+  version: v1
+  versionState: active
