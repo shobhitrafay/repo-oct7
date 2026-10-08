@@ -75,7 +75,7 @@ spec:
             podCidr: 10.244.0.0/16
             serviceCidr: 10.0.0.0/16
           nodeProvisioningProfile:
-            defaultNodePools: Auto
+            defaultNodePools: None
             mode: Auto
           oidcIssuerProfile:
             enabled: true
