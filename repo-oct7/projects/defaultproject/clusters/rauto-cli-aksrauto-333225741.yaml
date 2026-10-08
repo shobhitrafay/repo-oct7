@@ -67,6 +67,8 @@ spec:
           name: Basic
           tier: Free
         tags:
+          email: auto@rafay.co
+          env: automation
           migrationtag: migratevalue
         type: Microsoft.ContainerService/managedClusters
       nodePools:
