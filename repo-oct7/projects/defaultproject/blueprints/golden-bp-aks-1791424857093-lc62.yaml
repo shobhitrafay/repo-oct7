@@ -39,12 +39,13 @@ spec:
           cpu: 500m
           memory: 1000Mi
   drift:
-    action: Notify
+    action: Deny
     enabled: true
-  driftWebhook: {}
+  driftWebhook:
+    enabled: true
   namespaceConfig:
     enableSync: true
-    syncType: Managed
+    syncType: Unmanaged
   opaPolicy:
     opaPolicy:
     - name: rauto-policy-1791424784249-7tte
@@ -52,6 +53,11 @@ spec:
     profile:
       name: default
       version: latest
+  sharing:
+    enabled: true
+    projects:
+    - name: rauto-project-one-1791424804429-4us6
+    - name: rauto-project-1791424804429-4us6
   type: golden
-  version: v1
+  version: v2
   versionState: active
