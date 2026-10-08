@@ -67,9 +67,11 @@ spec:
           name: Basic
           tier: Free
         tags:
+          cost-center: engineering
           email: auto@rafay.co
-          env: automation
+          env: production
           migrationtag: migratevalue
+          owner: qa-team
         type: Microsoft.ContainerService/managedClusters
       nodePools:
       - apiVersion: "2021-05-01"
