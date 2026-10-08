@@ -1,0 +1,60 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: custom-bp-aks-1791424804429-4us6
+  project: defaultproject
+spec:
+  base:
+    name: default-aks
+    version: 4.3.1
+  componentsCriticality:
+  - name: rauto-addon-1791424776819-z7pe
+  - name: rauto-addon-1791424779952-b9d6
+  - name: opa-policy
+  - name: cost-profile
+  costProfile:
+    name: rauto-costprofile-1791424790885-8o9r
+    version: version-v1
+  customAddons:
+  - name: rauto-addon-1791424776819-z7pe
+    version: v1
+  - dependsOn:
+    - rauto-addon-1791424776819-z7pe
+    name: rauto-addon-1791424779952-b9d6
+    version: v1
+  defaultAddons:
+    enableIngress: true
+    enableMonitoring: true
+    monitoring:
+      helmExporter:
+        enabled: true
+      kubeStateMetrics:
+        enabled: true
+      metricsServer: {}
+      nodeExporter:
+        enabled: true
+      prometheusAdapter: {}
+      resources:
+        limits:
+          cpu: 500m
+          memory: 1000Mi
+  drift:
+    action: Notify
+    enabled: true
+  driftWebhook: {}
+  namespaceConfig:
+    enableSync: true
+    syncType: Managed
+  opaPolicy:
+    opaPolicy:
+    - name: rauto-policy-1791424784249-7tte
+      version: v1
+    profile:
+      name: default
+      version: latest
+  placement:
+    fleetValues:
+    - custom-bp-aks-1791424804429-4us6
+  type: custom
+  version: v1
+  versionState: active
