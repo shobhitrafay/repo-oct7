@@ -6,10 +6,6 @@ metadata:
 spec:
   blueprint:
     name: rishabh-latest-bp
-    optionalAddons:
-    - nginx-yaml
-    - hello-addon
-    - simple-addon
     version: v2
   cloudCredentials: shobhit_gcp
   config:

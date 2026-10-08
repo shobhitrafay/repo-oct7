@@ -8,6 +8,8 @@ spec:
     name: rishabh-latest-bp
     optionalAddons:
     - hello-addon
+    - simple-addon
+    - nginx-yaml
     version: v2
   cloudCredentials: shobhit_azure
   config:
