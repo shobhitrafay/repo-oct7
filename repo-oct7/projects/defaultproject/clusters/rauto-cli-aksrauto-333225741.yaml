@@ -62,7 +62,7 @@ spec:
             networkPlugin: kubenet
             networkPolicy: calico
           powerState:
-            code: Stopped
+            code: Running
         sku:
           name: Basic
           tier: Free
