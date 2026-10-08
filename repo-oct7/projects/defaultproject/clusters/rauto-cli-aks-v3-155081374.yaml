@@ -37,7 +37,7 @@ spec:
           dnsPrefix: rauto-cli-aks-v3-155081374-dns
           ingressProfile:
             webAppRouting:
-              enabled: true
+              enabled: false
               nginx:
                 defaultIngressControllerType: Internal
           kubernetesVersion: 1.36.3
