@@ -32,5 +32,5 @@ spec:
   driftWebhook:
     enabled: true
   type: custom
-  version: v3
+  version: v4
   versionState: active
