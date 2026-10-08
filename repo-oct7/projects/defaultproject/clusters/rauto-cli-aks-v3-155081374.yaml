@@ -81,6 +81,20 @@ spec:
           type: VirtualMachineScaleSets
           vmSize: Standard_D2as_v5
         type: Microsoft.ContainerService/managedClusters/agentPools
+      - apiVersion: "2025-05-01"
+        name: pool2
+        properties:
+          count: 1
+          kubeletConfig:
+            containerLogMaxFiles: 2
+            containerLogMaxSizeMB: 10
+          maxPods: 40
+          mode: User
+          orchestratorVersion: 1.36.3
+          osType: Linux
+          type: VirtualMachineScaleSets
+          vmSize: Standard_D2as_v5
+        type: Microsoft.ContainerService/managedClusters/agentPools
       resourceGroupName: qa-automation
       subscriptionID: a2252eb2-7a25-432b-a5ec-e18eba6f26b1
   type: aks
