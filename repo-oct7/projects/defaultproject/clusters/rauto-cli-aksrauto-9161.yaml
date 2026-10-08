@@ -1,0 +1,70 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  labels:
+    clusterlabel1: value1
+    clusterlabel2: value2
+    keyonlylabel: ""
+  name: rauto-cli-aksrauto-9161
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: default-aks
+    version: latest
+  cloudCredentials: rauto-cli-cprauto-9161
+  config:
+    kind: aksClusterConfig
+    metadata:
+      name: rauto-cli-aksrauto-9161
+    spec:
+      managedCluster:
+        additionalMetadata:
+          acrProfile:
+            acrName: rautoacr
+            resourceGroupName: qa-automation
+        apiVersion: "2021-05-01"
+        identity:
+          type: SystemAssigned
+        location: centralindia
+        properties:
+          apiServerAccessProfile:
+            enablePrivateCluster: false
+            enablePrivateClusterPublicFQDN: false
+          disableLocalAccounts: false
+          dnsPrefix: rauto-cli-aksrauto-9161-dns
+          kubernetesVersion: 1.36.4
+          networkProfile:
+            dnsServiceIP: 10.0.0.10
+            dockerBridgeCidr: 172.17.0.1/16
+            loadBalancerSku: standard
+            networkPlugin: azure
+            networkPolicy: calico
+            serviceCidr: 10.0.0.0/16
+        sku:
+          name: Basic
+          tier: Free
+        tags:
+          tagaks1: akstag1
+          tagaks2: akstag2
+        type: Microsoft.ContainerService/managedClusters
+      nodePools:
+      - apiVersion: "2021-05-01"
+        name: rauto9161
+        properties:
+          count: 1
+          enableAutoScaling: true
+          maxCount: 2
+          maxPods: 40
+          minCount: 1
+          mode: System
+          nodeLabels:
+            nodepool1label: nodepool1value
+          orchestratorVersion: 1.36.4
+          osType: Linux
+          type: VirtualMachineScaleSets
+          vmSize: Standard_D2as_v5
+          vnetSubnetID: /subscriptions/a2252eb2-7a25-432b-a5ec-e18eba6f26b1/resourceGroups/qa-automation/providers/Microsoft.Network/virtualNetworks/rautoqa/subnets/default
+        type: Microsoft.ContainerService/managedClusters/agentPools
+      resourceGroupName: qa-automation
+  proxyConfig: {}
+  type: aks
