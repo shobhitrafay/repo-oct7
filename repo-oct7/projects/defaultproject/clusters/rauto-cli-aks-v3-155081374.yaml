@@ -9,7 +9,8 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: minimal
+    name: rauto-blueprint-4833056
+    version: v1
   cloudCredentials: cli-cprauto-155081374
   config:
     kind: aksClusterConfig
