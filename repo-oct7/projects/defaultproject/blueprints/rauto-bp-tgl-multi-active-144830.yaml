@@ -8,10 +8,10 @@ spec:
     name: default
     version: 4.3.1
   customAddons:
-  - name: rauto-tgl-ad1-144830
+  - name: rauto-tgl-ad3-144830
     version: v1
   - isOptional: true
-    name: rauto-tgl-ad2-144830
+    name: rauto-tgl-ad4-144830
     version: v1
   defaultAddons:
     enableIngress: true
@@ -22,5 +22,5 @@ spec:
   driftWebhook:
     enabled: true
   type: custom
-  version: v1
+  version: v2
   versionState: active
