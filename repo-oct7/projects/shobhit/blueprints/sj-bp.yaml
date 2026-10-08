@@ -1,6 +1,7 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Blueprint
 metadata:
+  description: P1-5 isOptional via v2 yaml
   name: sj-bp
   project: shobhit
 spec:
@@ -8,17 +9,29 @@ spec:
     name: minimal
     version: 4.3.1
   customAddons:
-  - isOptional: true
-    name: sj-addon1
+  - name: sj-addon1
     version: v3
-  - isOptional: true
-    name: sj-addon2
+  - name: sj-addon2
     version: v3
   defaultAddons:
+    enableIngress: true
+    enableMonitoring: true
     monitoring:
-      gpuOperator: {}
+      gpuOperator:
+        discovery: {}
+      helmExporter:
+        enabled: true
+      kubeStateMetrics:
+        enabled: true
+      metricsServer:
+        enabled: true
+      nodeExporter:
+        enabled: true
+      prometheusAdapter:
+        enabled: true
+      resources: {}
   driftWebhook:
     enabled: true
   type: custom
-  version: v4
+  version: v2yaml-test
   versionState: active
