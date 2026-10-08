@@ -6,9 +6,6 @@ metadata:
 spec:
   blueprintConfig:
     name: rishabh-latest-bp
-    optionalAddons:
-    - simple-addon
-    - hello-addon
     version: v2
   cloudCredentials: shobhit_aws
   config:
@@ -18,4 +15,8 @@ spec:
       version: "1.35"
     nodeGroups:
     - name: ng-1
+    vpc:
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: false
   type: aws-eks
