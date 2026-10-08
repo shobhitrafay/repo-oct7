@@ -41,7 +41,7 @@ spec:
               enabled: true
               nginx:
                 defaultIngressControllerType: Internal
-          kubernetesVersion: 1.36.3
+          kubernetesVersion: 1.36.4
           networkProfile:
             dnsServiceIP: 10.0.0.10
             loadBalancerSku: standard
