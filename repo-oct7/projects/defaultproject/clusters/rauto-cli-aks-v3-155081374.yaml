@@ -26,7 +26,7 @@ spec:
             azureKeyvaultSecretsProvider:
               config:
                 enableSecretRotation: "true"
-                rotationPollInterval: 2m
+                rotationPollInterval: 5m
               enabled: true
             azurePolicy:
               enabled: true
