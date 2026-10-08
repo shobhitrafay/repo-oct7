@@ -5,11 +5,8 @@ metadata:
   project: shobhit
 spec:
   blueprint:
-    name: sj-bp
-    optionalAddons:
-    - sj-addon1
-    - sj-addon1
-    version: v2
+    name: default-aks
+    version: latest
   cloudCredentials: shobhit_azure
   config:
     kind: aksClusterConfig
