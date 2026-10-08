@@ -1,0 +1,123 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  labels:
+    role: aks-qe
+    team: rafay-infra
+  name: rauto-aks-byocni-844112360
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: rauto-aks-bp-844112360
+    version: v1
+  cloudCredentials: cli-cprauto-byocni-844112360
+  config:
+    kind: aksClusterConfig
+    metadata:
+      name: rauto-aks-byocni-844112360
+    spec:
+      bootstrapVmParams:
+        image:
+          id: /subscriptions/e56d2d8d-c85b-4672-a5b6-fd9c9d94f042/resourceGroups/sj-rg/providers/Microsoft.Compute/galleries/rhel9gallerysub/images/rhel9-bootstrap-imagesub/versions/1.0.0
+          osFamily: rhel
+          osState: Generalized
+        vmSize: Standard_B4ms
+      managedCluster:
+        apiVersion: "2025-05-01"
+        identity:
+          type: SystemAssigned
+        location: centralindia
+        properties:
+          addonProfiles:
+            azureKeyvaultSecretsProvider:
+              config:
+                enableSecretRotation: "true"
+                rotationPollInterval: 2m
+              enabled: true
+            azurePolicy:
+              enabled: true
+          apiServerAccessProfile:
+            enablePrivateCluster: false
+            enablePrivateClusterPublicFQDN: false
+          disableLocalAccounts: false
+          dnsPrefix: rauto-aks-byocni-844112360-dns
+          httpProxyConfig:
+            httpProxy: http://10.225.0.10:443/
+            httpsProxy: http://10.225.0.10:443/
+            noProxy:
+            - 10.0.0.0/16
+            - localhost
+            - 127.0.0.1
+            - ingress-controller-v1-controller-admission.rafay-system.svc
+            - secretstore-webhook.rafay-system.svc
+            - 10.225.0.0/24
+            - az-prox-26feb-dns-z9v3wwih.hcp.centralindia.azmk8s.io
+            - 10.244.0.0/16
+            - 10.224.0.0/12
+            - 169.254.169.254
+            - .hcp.centralindia.azmk8s.io
+            - 168.63.129.16
+            - konnectivity
+            - k8master.service.consul
+            - rafay-drift-v3.rafay-system.svc
+            - .privatelink.centralindia.azmk8s.io
+            - privatelink.centralindia.azmk8s.io
+          ingressProfile:
+            webAppRouting:
+              enabled: true
+              nginx:
+                defaultIngressControllerType: Internal
+          kubernetesVersion: 1.36.3
+          networkProfile:
+            dnsServiceIP: 10.0.0.10
+            loadBalancerSku: standard
+            networkPlugin: none
+            podCidr: 10.244.0.0/16
+            serviceCidr: 10.0.0.0/16
+          nodeProvisioningProfile:
+            defaultNodePools: Auto
+            mode: Auto
+          oidcIssuerProfile:
+            enabled: true
+          powerState:
+            code: Running
+          securityProfile:
+            workloadIdentity:
+              enabled: true
+          serviceMeshProfile:
+            istio:
+              components: {}
+              revisions:
+              - asm-1-29
+            mode: Istio
+        sku:
+          name: Base
+          tier: Free
+        tags:
+          migrationtag: migratevalue
+        type: Microsoft.ContainerService/managedClusters
+      nodePools:
+      - apiVersion: "2025-05-01"
+        name: pool1
+        properties:
+          count: 2
+          kubeletConfig:
+            containerLogMaxFiles: 2
+            containerLogMaxSizeMB: 10
+          maxPods: 40
+          mode: System
+          nodeLabels:
+            pool1migratekey: poool1migratevalue
+          orchestratorVersion: 1.36.3
+          osType: Linux
+          type: VirtualMachineScaleSets
+          vmSize: Standard_D2as_v5
+          vnetSubnetID: /subscriptions/a2252eb2-7a25-432b-a5ec-e18eba6f26b1/resourceGroups/shobhit-fnf-nw-rg/providers/Microsoft.Network/virtualNetworks/shobhit-fnf-vnet/subnets/default
+        type: Microsoft.ContainerService/managedClusters/agentPools
+      resourceGroupName: qa-automation
+  proxyConfig:
+    enabled: true
+    httpProxy: http://10.225.0.10:443/
+    httpsProxy: http://10.225.0.10:443/
+    noProxy: 10.0.0.0/16,localhost,127.0.0.1,ingress-controller-v1-controller-admission.rafay-system.svc,secretstore-webhook.rafay-system.svc,10.225.0.0/24,az-prox-26feb-dns-z9v3wwih.hcp.centralindia.azmk8s.io,10.244.0.0/16,10.224.0.0/12,169.254.169.254,.hcp.centralindia.azmk8s.io,168.63.129.16,konnectivity,k8master.service.consul,rafay-drift-v3.rafay-system.svc,.privatelink.centralindia.azmk8s.io,privatelink.centralindia.azmk8s.io
+  type: aks
