@@ -27,7 +27,7 @@ spec:
               config:
                 enableSecretRotation: "true"
                 rotationPollInterval: 5m
-              enabled: false
+              enabled: true
             azurePolicy:
               enabled: true
           apiServerAccessProfile:
