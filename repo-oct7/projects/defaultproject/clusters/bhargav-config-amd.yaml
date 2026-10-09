@@ -8,9 +8,6 @@ metadata:
 spec:
   blueprint:
     name: rishabh-latest-bp
-    optionalAddons:
-    - abcdefgh
-    - nginx-yaml
     version: v4
   config:
     installerTtl: 365
