@@ -8,8 +8,6 @@ spec:
     name: rishabh-latest-bp
     optionalAddons:
     - hello-addon
-    - nginx-yaml
-    - simple-addon
     version: v2
   config:
     autoApproveNodes: true
