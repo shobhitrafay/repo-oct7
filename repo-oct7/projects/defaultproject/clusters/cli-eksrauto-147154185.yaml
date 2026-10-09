@@ -111,6 +111,9 @@ spec:
       minSize: 1
       name: cli-ngrauto-first-147154185
       privateNetworking: true
+      tags:
+        key1: value1
+        key2: value2
       version: "1.34"
     - amiFamily: AmazonLinux2023
       desiredCapacity: 1
