@@ -55,6 +55,20 @@ spec:
         email: automation@rafay.co
         env: dev
         key1: val1
+    managedNodeGroups:
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 1
+      instanceType: t3.xlarge
+      maxSize: 1
+      minSize: 1
+      name: add-managed-ng-fargate-601820708
+      privateNetworking: true
+      tags:
+        email: automation-user@rafay.co
+        env: automation
+      version: "1.35"
+      volumeSize: 80
+      volumeType: gp3
     metadata:
       name: cli-eksrauto-fg-601820708
       region: us-east-1
