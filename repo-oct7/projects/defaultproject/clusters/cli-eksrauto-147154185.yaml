@@ -67,6 +67,7 @@ spec:
         namespace: namespace-287287286
         permissionPolicyARNs:
         - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+        - arn:aws:iam::aws:policy/AmazonS3FullAccess
         serviceAccountName: rauto-sa-1191
       serviceAccounts:
       - attachPolicy: {}
