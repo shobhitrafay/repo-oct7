@@ -6,6 +6,10 @@ metadata:
 spec:
   blueprint:
     name: rishabh-latest-bp
+    optionalAddons:
+    - simple-addon
+    - hello-addon
+    - nginx-yaml
     version: v2
   config:
     autoApproveNodes: true
