@@ -17,7 +17,7 @@ spec:
         kubernetesUsername: kalyan-rafay
         principalARN: arn:aws:iam::679196758854:user/kalyan@rafay.co
         type: STANDARD
-      authenticationMode: API_AND_CONFIG_MAP
+      authenticationMode: API
       bootstrapClusterCreatorAdminPermissions: true
     addons:
     - name: eks-pod-identity-agent
