@@ -27,6 +27,8 @@ spec:
           networkProfile:
             loadBalancerSku: standard
             networkPlugin: kubenet
+          powerState:
+            code: Stopped
         type: Microsoft.ContainerService/managedClusters
       nodePools:
       - apiVersion: "2024-01-01"
