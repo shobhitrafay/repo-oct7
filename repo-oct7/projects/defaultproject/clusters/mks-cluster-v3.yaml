@@ -6,9 +6,6 @@ metadata:
 spec:
   blueprint:
     name: rishabh-latest-bp
-    optionalAddons:
-    - hello-addon
-    - simple-addon
     version: v2
   config:
     autoApproveNodes: true
