@@ -112,7 +112,6 @@ spec:
         email: automation-user@rafay.co
         env: automation
         squad: dev
-        tags-day2: edited-on-day-2
       version: "1.36"
     nodeGroups:
     - ami: ami-05430ac5164366283
