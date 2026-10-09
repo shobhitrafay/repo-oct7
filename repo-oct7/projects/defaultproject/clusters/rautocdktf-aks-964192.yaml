@@ -4,7 +4,7 @@ metadata:
   name: rautocdktf-aks-964192
   project: defaultproject
 spec:
-  blueprint:
+  blueprintConfig:
     name: default-aks
   cloudCredentials: rautocdktf-cloudp-964192
   config:
