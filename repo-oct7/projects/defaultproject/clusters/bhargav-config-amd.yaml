@@ -8,9 +8,6 @@ metadata:
 spec:
   blueprint:
     name: rishabh-latest-bp
-    optionalAddons:
-    - simple-addon
-    - hello-addon
     version: v2
   config:
     installerTtl: 365
