@@ -18,6 +18,8 @@ spec:
       version: v1.13.2-eksbuild.51
     - name: kube-proxy
       version: v1.33.10-eksbuild.49
+    - name: aws-ebs-csi-driver
+      version: latest
     addonsConfig: {}
     autoModeConfig: {}
     autoZonalShiftConfig: {}
