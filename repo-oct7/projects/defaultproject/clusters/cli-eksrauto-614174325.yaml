@@ -79,7 +79,7 @@ spec:
       minSize: 1
       name: ng-managed-default-AmazonLinux2023-614174325
       nodeRepairConfig:
-        enabled: true
+        enabled: false
         maxParallelNodesRepairedCount: 2
         maxUnhealthyNodeThresholdCount: 3
         nodeRepairConfigOverrides:
