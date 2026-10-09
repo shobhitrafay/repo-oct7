@@ -41,7 +41,7 @@ spec:
     - name: aws-ebs-csi-driver
       version: latest
     deleteProtection:
-      enabled: true
+      enabled: false
     iam:
       serviceAccounts:
       - attachPolicy: {}
