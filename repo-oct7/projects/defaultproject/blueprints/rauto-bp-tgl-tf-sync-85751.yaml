@@ -1,0 +1,29 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: rauto-bp-tgl-tf-sync-85751
+  project: defaultproject
+spec:
+  base:
+    name: minimal
+    version: 4.3.1
+  customAddons:
+  - name: rauto-tgl-tf-ad1-85751
+    version: v1
+  - isOptional: true
+    name: rauto-tgl-tf-ad2-85751
+    version: v1
+  - isOptional: true
+    name: rauto-tgl-tf-ad3-85751
+    version: v1
+  - isOptional: true
+    name: rauto-tgl-tf-ad4-85751
+    version: v1
+  defaultAddons:
+    monitoring:
+      gpuOperator: {}
+  driftWebhook:
+    enabled: true
+  type: custom
+  version: v1
+  versionState: active
