@@ -130,7 +130,7 @@ spec:
       tags:
         key1: value1
         key2: value2
-      version: "1.35"
+      version: "1.36"
     - amiFamily: AmazonLinux2023
       desiredCapacity: 1
       instanceType: t3.xlarge
