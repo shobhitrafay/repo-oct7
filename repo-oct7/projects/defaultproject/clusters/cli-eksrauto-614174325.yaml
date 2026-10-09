@@ -156,6 +156,19 @@ spec:
       version: "1.36"
       volumeSize: 80
       volumeType: gp3
+    - ami: ami-05430ac5164366283
+      desiredCapacity: 1
+      instanceType: t3.xlarge
+      maxSize: 1
+      minSize: 1
+      name: ng-custom-add-ng-AmazonLinux2023-614174325
+      overrideBootstrapCommand: '| [AmazonLinux2023]'
+      privateNetworking: true
+      tags:
+        email: automation-user@rafay.co
+        env: automation
+      volumeSize: 80
+      volumeType: gp3
     vpc:
       clusterEndpoints:
         privateAccess: true
