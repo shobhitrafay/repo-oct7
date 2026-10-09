@@ -46,6 +46,14 @@ spec:
         email: automation@rafay.co
         env: qa
         key1: val2
+    - name: rauto-fg-3
+      selectors:
+      - namespace: f1
+      - namespace: f2
+      tags:
+        email: automation@rafay.co
+        env: dev
+        key1: val1
     metadata:
       name: cli-eksrauto-fg-601820708
       region: us-east-1
