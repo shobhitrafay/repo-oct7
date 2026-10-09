@@ -8,7 +8,10 @@ metadata:
 spec:
   blueprint:
     name: rishabh-latest-bp
-    version: v2
+    optionalAddons:
+    - abcdefgh
+    - nginx-yaml
+    version: v4
   config:
     installerTtl: 365
     kubernetesVersion: v1.35.4
