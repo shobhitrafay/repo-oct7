@@ -148,6 +148,7 @@ spec:
       tags:
         email: automation-user@rafay.co
         env: automation
+      version: "1.36"
       volumeSize: 80
       volumeType: gp3
     vpc:
