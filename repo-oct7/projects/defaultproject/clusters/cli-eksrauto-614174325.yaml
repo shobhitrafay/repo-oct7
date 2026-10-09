@@ -79,15 +79,15 @@ spec:
       minSize: 1
       name: ng-managed-default-AmazonLinux2023-614174325
       nodeRepairConfig:
-        enabled: false
-        maxParallelNodesRepairedCount: 2
-        maxUnhealthyNodeThresholdCount: 3
+        enabled: true
+        maxParallelNodesRepairedCount: 1
+        maxUnhealthyNodeThresholdCount: 2
         nodeRepairConfigOverrides:
-        - minRepairWaitTimeMins: 30
+        - minRepairWaitTimeMins: 20
           nodeMonitoringCondition: NetworkingReady
           nodeUnhealthyReason: ContainerRuntimeFailed
           repairAction: Replace
-        - minRepairWaitTimeMins: 20
+        - minRepairWaitTimeMins: 10
           nodeMonitoringCondition: Ready
           nodeUnhealthyReason: ContainerRuntimeFailed
           repairAction: Replace
