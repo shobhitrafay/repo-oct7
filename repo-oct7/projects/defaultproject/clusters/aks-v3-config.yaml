@@ -6,6 +6,8 @@ metadata:
 spec:
   blueprintConfig:
     name: rishabh-latest-bp
+    optionalAddons:
+    - nginx-yaml
     version: v2
   cloudCredentials: shobhit_azure
   config:
