@@ -17,7 +17,7 @@ spec:
         kubernetesUsername: rauto-tf-user
         principalARN: arn:aws:iam::211125364662:user/kalyan@rafay.co
         type: STANDARD
-      authenticationMode: API_AND_CONFIG_MAP
+      authenticationMode: API
       bootstrapClusterCreatorAdminPermissions: true
     addons:
     - name: coredns
