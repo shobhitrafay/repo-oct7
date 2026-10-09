@@ -69,6 +69,19 @@ spec:
       maxSize: 2
       minSize: 0
       name: cli-managedngrauto-147154185
+      nodeRepairConfig:
+        enabled: true
+        maxParallelNodesRepairedPercentage: 10
+        maxUnhealthyNodeThresholdPercentage: 20
+        nodeRepairConfigOverrides:
+        - minRepairWaitTimeMins: 20
+          nodeMonitoringCondition: NetworkingReady
+          nodeUnhealthyReason: ContainerRuntimeFailed
+          repairAction: Replace
+        - minRepairWaitTimeMins: 10
+          nodeMonitoringCondition: Ready
+          nodeUnhealthyReason: ContainerRuntimeFailed
+          repairAction: Replace
       privateNetworking: true
       version: "1.34"
       volumeSize: 80
