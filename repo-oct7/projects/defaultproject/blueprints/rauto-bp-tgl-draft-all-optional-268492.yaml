@@ -8,8 +8,7 @@ spec:
     name: default
     version: 4.3.1
   customAddons:
-  - isOptional: true
-    name: rauto-tgl-ad1-268492
+  - name: rauto-tgl-ad1-268492
     version: v1
   - isOptional: true
     name: rauto-tgl-ad2-268492
@@ -30,4 +29,4 @@ spec:
     enabled: true
   type: custom
   version: v1
-  versionState: draft
+  versionState: active
