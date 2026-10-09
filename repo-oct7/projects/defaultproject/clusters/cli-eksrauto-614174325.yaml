@@ -56,7 +56,7 @@ spec:
           irsatag: rauto-irsatag
       withOIDC: true
     managedNodeGroups:
-    - ami: ami-022909a1d539f16f9
+    - ami: ami-05430ac5164366283
       desiredCapacity: 1
       instanceType: t3.xlarge
       maxSize: 1
