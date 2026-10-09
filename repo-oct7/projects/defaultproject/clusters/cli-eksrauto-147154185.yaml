@@ -118,7 +118,7 @@ spec:
         email: automation-user@rafay.co
         env: automation
         squad: dev
-      version: "1.35"
+      version: "1.36"
     nodeGroups:
     - amiFamily: AmazonLinux2023
       desiredCapacity: 1
