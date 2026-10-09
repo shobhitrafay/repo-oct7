@@ -156,6 +156,18 @@ spec:
       version: "1.36"
       volumeSize: 80
       volumeType: gp3
+    - desiredCapacity: 1
+      instanceType: t3.xlarge
+      maxSize: 1
+      minSize: 1
+      name: eksngrauto-40688744
+      privateNetworking: true
+      tags:
+        email: automation-user@rafay.co
+        env: automation
+      version: "1.35"
+      volumeSize: 80
+      volumeType: gp3
     vpc:
       clusterEndpoints:
         privateAccess: true
