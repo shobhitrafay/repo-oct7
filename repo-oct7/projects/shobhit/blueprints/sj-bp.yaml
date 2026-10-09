@@ -35,7 +35,7 @@ spec:
   sharing:
     enabled: true
     projects:
-    - name: phani-p2
+    - name: '*'
   type: custom
   version: v2yaml-test
   versionState: active
