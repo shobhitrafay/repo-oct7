@@ -9,14 +9,6 @@ spec:
   cloudCredentials: rautocdktf-cloudp-785894
   config:
     accessConfig:
-      accessEntries:
-      - accessPolicies:
-        - accessScope:
-            type: cluster
-          policyARN: arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy
-        kubernetesUsername: rauto-tf-user
-        principalARN: arn:aws:iam::211125364662:user/kalyan@rafay.co
-        type: STANDARD
       authenticationMode: API
       bootstrapClusterCreatorAdminPermissions: true
     addons:
