@@ -57,6 +57,9 @@ spec:
       withOIDC: true
     managedNodeGroups:
     - ami: ami-05430ac5164366283
+      asgSuspendProcesses:
+      - InstanceRefresh
+      - ReplaceUnhealthy
       desiredCapacity: 1
       instanceType: t3.xlarge
       maxSize: 1
