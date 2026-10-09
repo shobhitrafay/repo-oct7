@@ -17,14 +17,7 @@ spec:
       version: latest
     - name: aws-ebs-csi-driver
       version: latest
-    autoZonalShiftConfig:
-      allowedWindows:
-      - Sat:00:00-Sat:03:00
-      blockingAlarms:
-      - arn:aws:cloudwatch:us-east-1:211125364662:alarm:rauto-arc-zonal-blocking-alarm-1
-      enabled: true
-      outcomeAlarms:
-      - arn:aws:cloudwatch:us-east-1:211125364662:alarm:rauto-arc-zonal-outcome-alarm-1
+    autoZonalShiftConfig: {}
     availabilityZones:
     - us-east-1a
     - us-east-1b
