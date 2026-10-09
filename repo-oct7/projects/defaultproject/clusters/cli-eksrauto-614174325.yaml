@@ -129,10 +129,10 @@ spec:
       asgSuspendProcesses:
       - AlarmNotification
       - ScheduledActions
-      desiredCapacity: 2
+      desiredCapacity: 1
       instanceType: t3.xlarge
-      maxSize: 2
-      minSize: 2
+      maxSize: 1
+      minSize: 1
       name: ng-selfmanaged-default-AmazonLinux2023-614174325
       privateNetworking: true
       tags:
