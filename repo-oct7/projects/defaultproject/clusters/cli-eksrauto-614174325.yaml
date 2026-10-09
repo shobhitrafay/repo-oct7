@@ -107,7 +107,7 @@ spec:
         email: automation-user@rafay.co
         env: automation
         squad: dev
-      version: "1.35"
+      version: "1.36"
     nodeGroups:
     - ami: ami-022909a1d539f16f9
       desiredCapacity: 1
