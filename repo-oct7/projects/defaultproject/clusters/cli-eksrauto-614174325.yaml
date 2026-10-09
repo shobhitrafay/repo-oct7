@@ -80,14 +80,14 @@ spec:
       name: ng-managed-default-AmazonLinux2023-614174325
       nodeRepairConfig:
         enabled: true
-        maxParallelNodesRepairedCount: 1
-        maxUnhealthyNodeThresholdCount: 2
+        maxParallelNodesRepairedCount: 2
+        maxUnhealthyNodeThresholdCount: 3
         nodeRepairConfigOverrides:
-        - minRepairWaitTimeMins: 20
+        - minRepairWaitTimeMins: 30
           nodeMonitoringCondition: NetworkingReady
           nodeUnhealthyReason: ContainerRuntimeFailed
           repairAction: Replace
-        - minRepairWaitTimeMins: 10
+        - minRepairWaitTimeMins: 20
           nodeMonitoringCondition: Ready
           nodeUnhealthyReason: ContainerRuntimeFailed
           repairAction: Replace
