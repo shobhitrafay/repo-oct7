@@ -1,0 +1,154 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: cli-eksrauto-614174325
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: minimal
+  cloudCredentials: cli-cprauto-614174325
+  config:
+    accessConfig:
+      accessEntries:
+      - accessPolicies:
+        - accessScope:
+            type: cluster
+          policyARN: arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy
+        kubernetesUsername: kalyan-rafay
+        principalARN: arn:aws:iam::679196758854:user/kalyan@rafay.co
+        type: STANDARD
+      authenticationMode: API
+      bootstrapClusterCreatorAdminPermissions: true
+    addons:
+    - name: eks-pod-identity-agent
+      version: latest
+    - name: coredns
+      version: latest
+    - name: kube-proxy
+      version: latest
+    - name: vpc-cni
+      version: latest
+    - name: aws-ebs-csi-driver
+      version: latest
+    deleteProtection:
+      enabled: true
+    iam:
+      serviceAccounts:
+      - attachPolicy: {}
+        attachPolicyARNs:
+        - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+        metadata:
+          annotations:
+            irsa: rauto-irsa
+          labels:
+            irsalabel: rauto-irsalabel
+          name: rauto-irsa
+          namespace: rafay-system
+        tags:
+          irsatag: rauto-irsatag
+      withOIDC: true
+    managedNodeGroups:
+    - ami: ami-022909a1d539f16f9
+      desiredCapacity: 1
+      instanceType: t3.xlarge
+      maxSize: 1
+      minSize: 1
+      name: custom-managed-AmazonLinux2023-614174325
+      overrideBootstrapCommand: '| [AmazonLinux2023]'
+      privateNetworking: true
+      tags:
+        email: automation-user@rafay.co
+        env: automation
+      volumeSize: 80
+      volumeType: gp3
+    - amiFamily: AmazonLinux2023
+      asgSuspendProcesses:
+      - AZRebalance
+      - HealthCheck
+      desiredCapacity: 1
+      instanceType: t3.xlarge
+      maxSize: 1
+      minSize: 1
+      name: ng-managed-default-AmazonLinux2023-614174325
+      nodeRepairConfig:
+        enabled: true
+        maxParallelNodesRepairedCount: 1
+        maxUnhealthyNodeThresholdCount: 2
+        nodeRepairConfigOverrides:
+        - minRepairWaitTimeMins: 20
+          nodeMonitoringCondition: NetworkingReady
+          nodeUnhealthyReason: ContainerRuntimeFailed
+          repairAction: Replace
+        - minRepairWaitTimeMins: 10
+          nodeMonitoringCondition: Ready
+          nodeUnhealthyReason: ContainerRuntimeFailed
+          repairAction: Replace
+      privateNetworking: true
+      tags:
+        email: automation-user@rafay.co
+        env: automation
+      version: "1.35"
+      volumeSize: 80
+      volumeType: gp3
+    metadata:
+      name: cli-eksrauto-614174325
+      region: us-east-1
+      tags:
+        build_num: dev-master-494
+        creation_time: "2026-10-09T13:34:50Z"
+        email: automation-user@rafay.co
+        env: automation
+        squad: dev
+      version: "1.35"
+    nodeGroups:
+    - ami: ami-022909a1d539f16f9
+      desiredCapacity: 1
+      instanceType: t3.xlarge
+      maxSize: 1
+      minSize: 1
+      name: custom-self-managed-AmazonLinux2023-614174325
+      overrideBootstrapCommand: '| [AmazonLinux2023]'
+      privateNetworking: true
+      tags:
+        email: automation-user@rafay.co
+        env: automation
+      volumeSize: 80
+      volumeType: gp3
+    - amiFamily: AmazonLinux2023
+      asgSuspendProcesses:
+      - AlarmNotification
+      - ScheduledActions
+      desiredCapacity: 1
+      instanceType: t3.xlarge
+      maxSize: 1
+      minSize: 1
+      name: ng-selfmanaged-default-AmazonLinux2023-614174325
+      privateNetworking: true
+      tags:
+        email: automation-user@rafay.co
+        env: automation
+      version: "1.35"
+      volumeSize: 80
+      volumeType: gp3
+    vpc:
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: false
+      controlPlaneSecurityGroupIDs:
+      - sg-024159ff2be4fb66e
+      - sg-00a5f7f665fd16a58
+      - sg-054cf1b6b9529c0bc
+      nat:
+        gateway: Single
+      subnets:
+        private:
+          subnet-06114706579ea10c0:
+            id: subnet-06114706579ea10c0
+          subnet-0c93348944b797969:
+            id: subnet-0c93348944b797969
+        public:
+          subnet-00afb1bd23c788794:
+            id: subnet-00afb1bd23c788794
+          subnet-097e192276767658d:
+            id: subnet-097e192276767658d
+  type: aws-eks
