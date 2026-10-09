@@ -141,6 +141,18 @@ spec:
       name: cli-ngrauto-second-147154185
       privateNetworking: true
       version: "1.36"
+    - desiredCapacity: 1
+      instanceType: t3.medium
+      maxSize: 1
+      minSize: 1
+      name: eksngrauto-24979173
+      privateNetworking: true
+      tags:
+        email: automation-user@rafay.co
+        env: automation
+      version: "1.36"
+      volumeSize: 80
+      volumeType: gp3
     vpc:
       cidr: 192.168.0.0/16
       clusterEndpoints:
