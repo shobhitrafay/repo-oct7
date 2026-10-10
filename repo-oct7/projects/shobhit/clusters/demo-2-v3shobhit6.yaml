@@ -68,4 +68,25 @@ spec:
           vmSize: Standard_B4ms
         type: Microsoft.ContainerService/managedClusters/agentPools
       resourceGroupName: shobhit-rg
+      workloadIdentities:
+      - createIdentity: true
+        metadata:
+          location: centralindia
+          name: shobhit-tf-wi-1-uai-909v3
+          resourceGroup: shobhit-rg
+          tags:
+            owner: shobhit
+        roleAssignments:
+        - name: Key Vault Secrets User
+          scope: /subscriptions/a2252eb2-7a25-432b-a5ec-e18eba6f26b1/resourceGroups/shobhit-rg/providers/Microsoft.KeyVault/vaults/shobhitkeyvault2
+        serviceAccounts:
+        - createAccount: true
+          metadata:
+            annotations:
+              role: dev
+            labels:
+              department: shobhit
+              owner: shobhit
+            name: shobhit-tf-wi-1-sa-909v3
+            namespace: default
   type: aks
