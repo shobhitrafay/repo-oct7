@@ -136,6 +136,19 @@ spec:
       version: "1.35"
       volumeSize: 80
       volumeType: gp3
+    - ami: ami-0e877121c23226906
+      desiredCapacity: 1
+      instanceType: t3.xlarge
+      maxSize: 1
+      minSize: 1
+      name: ng-custom-ami-windows176040220
+      overrideBootstrapCommand: '| [Windows]'
+      privateNetworking: true
+      tags:
+        email: automation-user@rafay.co
+        env: automation
+      volumeSize: 80
+      volumeType: gp3
     secretsEncryption:
       encryptExistingSecrets: true
       keyARN: arn:aws:kms:us-east-1:211125364662:key/d30cd169-de6e-43e5-9f06-0a8eab64c2d8
