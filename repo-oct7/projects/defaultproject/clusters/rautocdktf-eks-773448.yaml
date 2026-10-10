@@ -1,24 +1,13 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rautocdktf-eks-310145
+  name: rautocdktf-eks-773448
   project: defaultproject
 spec:
   blueprintConfig:
     name: default
-  cloudCredentials: rautocdktf-cloudp-310145
+  cloudCredentials: rautocdktf-cloudp-773448
   config:
-    accessConfig:
-      accessEntries:
-      - accessPolicies:
-        - accessScope:
-            type: cluster
-          policyARN: arn:aws:eks::aws:cluster-access-policy/AmazonEKSViewPolicy
-        kubernetesUsername: rauto-tf-user
-        principalARN: arn:aws:iam::211125364662:user/kalyan@rafay.co
-        type: STANDARD
-      authenticationMode: API_AND_CONFIG_MAP
-      bootstrapClusterCreatorAdminPermissions: true
     addons:
     - name: coredns
       version: latest
@@ -36,7 +25,7 @@ spec:
     - us-east-1f
     cloudWatch: {}
     managedNodeGroups:
-    - ami: ami-06d9bcac32f727ddb
+    - amiFamily: AmazonLinux2023
       desiredCapacity: 1
       disableIMDSv1: false
       disablePodIMDS: false
@@ -49,17 +38,18 @@ spec:
       name: rauto-ngmanaged0
       privateNetworking: true
       spot: false
+      version: "1.35"
       volumeEncrypted: false
       volumeType: gp3
     metadata:
-      name: rautocdktf-eks-310145
+      name: rautocdktf-eks-773448
       region: us-east-1
       tags:
         build_num: dev-master-495
         email: automation@rafay.co
         env: automation
         squad: dev
-      version: "1.31"
+      version: "1.35"
     network:
       cni:
         name: aws-cni
