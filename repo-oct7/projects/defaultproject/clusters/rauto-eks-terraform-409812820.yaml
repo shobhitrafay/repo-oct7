@@ -1,0 +1,193 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  labels:
+    interface: terraform
+    qe-owner: automation
+  name: rauto-eks-terraform-409812820
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: default
+    version: latest
+  cloudCredentials: rauto_471845143
+  config:
+    addons:
+    - attachPolicy:
+        Statement:
+        - Condition:
+            StringEquals:
+              aws:username: kalyan
+          Effect: Allow
+          NotAction:
+          - ec2:Describe*
+          Resource: '*'
+        Version: "2012-10-17"
+      name: kube-proxy
+      version: latest
+    - name: coredns
+      version: latest
+    - name: vpc-cni
+      version: latest
+    - name: aws-ebs-csi-driver
+      version: latest
+    availabilityZones:
+    - us-east-1a
+    - us-east-1b
+    iam:
+      serviceAccounts:
+      - attachPolicyARNs:
+        - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+        metadata:
+          labels:
+            k8sv: "128"
+          name: rolesa-infra
+          namespace: infra-qe
+        roleOnly: false
+        tags:
+          env: qa
+      withOIDC: true
+    identityMappings:
+      arns:
+      - arn: arn:aws:iam::679196758854:user/automation-qa
+        group:
+        - system:masters
+        username: automation
+    managedNodeGroups:
+    - ami: ami-0a5ac143a9a02d0e9
+      desiredCapacity: 1
+      disableIMDSv1: false
+      disablePodIMDS: false
+      ebsOptimized: false
+      efaEnabled: false
+      enableDetailedMonitoring: false
+      iam:
+        attachPolicy:
+          Statement:
+          - Action:
+            - ec2:Describe*
+            - sts:AssumeRole
+            Condition:
+              StringEquals:
+                ec2:CreateAction:
+                - CreateVolume
+                - CreateSnapshot
+            Effect: Allow
+            Resource: '*'
+          Version: "2012-10-17"
+      instanceType: t3a.xlarge
+      maxSize: 20
+      minSize: 1
+      name: managed-ng1
+      overrideBootstrapCommand: '| [Bottlerocket]'
+      privateNetworking: true
+      spot: false
+      volumeEncrypted: false
+      volumeSize: 80
+      volumeType: gp3
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 1
+      disableIMDSv1: false
+      disablePodIMDS: false
+      ebsOptimized: false
+      efaEnabled: false
+      enableDetailedMonitoring: false
+      instanceType: t3.xlarge
+      labels:
+        key: rauto
+      maxPodsPerNode: 50
+      maxSize: 20
+      minSize: 1
+      name: managed-ng2
+      privateNetworking: true
+      spot: false
+      ssh:
+        allow: true
+        publicKeyName: rauto-aws
+      taints:
+      - effect: NoSchedule
+        key: nodetaint
+        value: rauto
+      version: "1.35"
+      volumeEncrypted: false
+      volumeSize: 80
+      volumeType: gp3
+    metadata:
+      name: rauto-eks-terraform-409812820
+      region: us-east-1
+      tags:
+        build_num: dev-master-495
+        email: automation@rafay.co
+        env: automation
+        squad: dev
+      version: "1.35"
+    network:
+      cni:
+        name: aws-cni
+        params:
+          customCniCidr: 100.0.0.0/16
+    nodeGroups:
+    - amiFamily: Ubuntu2404
+      desiredCapacity: 1
+      disableIMDSv1: false
+      disablePodIMDS: false
+      ebsOptimized: false
+      efaEnabled: false
+      enableDetailedMonitoring: false
+      instanceType: t3a.xlarge
+      maxSize: 4
+      minSize: 1
+      name: self-ng1
+      privateNetworking: true
+      ssh:
+        allow: true
+        publicKeyName: rauto-aws
+      tags:
+        email: automation@rafay.co
+        env: automation
+      version: "1.35"
+      volumeEncrypted: false
+      volumeSize: 80
+      volumeType: gp3
+    - ami: ami-022909a1d539f16f9
+      desiredCapacity: 1
+      disableIMDSv1: false
+      disablePodIMDS: false
+      ebsOptimized: false
+      efaEnabled: false
+      enableDetailedMonitoring: false
+      instanceType: t3a.xlarge
+      maxSize: 4
+      minSize: 1
+      name: self-ng2
+      overrideBootstrapCommand: '[AmazonLinux2023]'
+      privateNetworking: true
+      tags:
+        email: automation@rafay.co
+        env: automation
+      version: "1.35"
+      volumeEncrypted: false
+      volumeSize: 80
+      volumeType: gp3
+    secretsEncryption:
+      keyARN: arn:aws:kms:us-east-1:211125364662:key/d30cd169-de6e-43e5-9f06-0a8eab64c2d8
+    vpc:
+      autoAllocateIPv6: false
+      cidr: 192.168.0.0/16
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: true
+      nat:
+        gateway: Single
+  systemComponentsPlacement:
+    daemonSetOverride:
+      tolerations:
+      - operator: Exists
+    nodeSelector:
+      key: rauto
+    tolerations:
+    - effect: NoSchedule
+      key: nodetaint
+      operator: Equal
+      value: rauto
+  type: aws-eks
