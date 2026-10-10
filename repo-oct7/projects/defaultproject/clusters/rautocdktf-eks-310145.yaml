@@ -36,7 +36,7 @@ spec:
     - us-east-1f
     cloudWatch: {}
     managedNodeGroups:
-    - ami: ami-06d9bcac32f727ddb
+    - ami: ami-093fee483ff615866
       desiredCapacity: 1
       disableIMDSv1: false
       disablePodIMDS: false
