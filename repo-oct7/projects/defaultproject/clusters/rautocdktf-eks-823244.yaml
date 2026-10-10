@@ -59,6 +59,28 @@ spec:
       version: "1.32"
       volumeEncrypted: false
       volumeType: gp3
+    - amiFamily: AmazonLinux2
+      desiredCapacity: 1
+      disableIMDSv1: false
+      disablePodIMDS: false
+      ebsOptimized: false
+      efaEnabled: false
+      enableDetailedMonitoring: false
+      instanceType: t3a.xlarge
+      labels:
+        key: rauto
+      maxSize: 2
+      minSize: 1
+      name: rauto-ng-new-823244
+      privateNetworking: true
+      spot: false
+      taints:
+      - effect: NoSchedule
+        key: nodetaint
+        value: rauto
+      version: "1.32"
+      volumeEncrypted: false
+      volumeType: gp3
     metadata:
       name: rautocdktf-eks-823244
       region: us-east-1
