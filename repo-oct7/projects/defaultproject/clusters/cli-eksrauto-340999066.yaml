@@ -31,7 +31,7 @@ spec:
     iam:
       serviceAccounts:
       - attachPolicyARNs:
-        - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+        - arn:aws:iam::aws:policy/AmazonS3FullAccess
         metadata:
           annotations:
             irsa: rauto-652794291
@@ -40,7 +40,7 @@ spec:
           name: rauto-irsa-7459
           namespace: namespace-652794291
         tags:
-          irsatag: rauto-652794291
+          awstag: rauto-irsa-652794291
       withOIDC: true
     kubernetesNetworkConfig:
       ipFamily: IPv6
