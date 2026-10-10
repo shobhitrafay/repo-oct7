@@ -70,4 +70,6 @@ spec:
       clusterEndpoints:
         privateAccess: true
         publicAccess: false
+    zonalShiftConfig:
+      enabled: true
   type: aws-eks
