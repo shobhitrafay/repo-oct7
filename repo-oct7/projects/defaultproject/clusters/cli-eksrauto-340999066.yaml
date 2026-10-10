@@ -55,6 +55,19 @@ spec:
       name: cli-ngrauto-second-340999066
       privateNetworking: true
       version: "1.36"
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 1
+      instanceType: t3.medium
+      maxSize: 1
+      minSize: 1
+      name: eksngrauto-394481012
+      privateNetworking: true
+      tags:
+        email: automation-user@rafay.co
+        env: automation
+      version: "1.36"
+      volumeSize: 80
+      volumeType: gp3
     metadata:
       name: cli-eksrauto-340999066
       region: us-east-1
