@@ -1,0 +1,58 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: cli-eksrauto-227873180
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: default
+  cloudCredentials: cli-cprauto-227873180
+  config:
+    addons:
+    - name: vpc-cni
+      version: latest
+    - name: coredns
+      version: latest
+    - name: kube-proxy
+      version: latest
+    - name: aws-ebs-csi-driver
+      version: latest
+    availabilityZones:
+    - us-east-1a
+    - us-east-1b
+    - us-east-1c
+    - us-east-1d
+    - us-east-1f
+    fargateProfiles:
+    - name: rauto-fargate-227873180
+      selectors:
+      - namespace: dev
+    - name: rauto-fargate1-227873180
+      selectors:
+      - labels:
+          env: demo
+        namespace: demo
+      tags:
+        env: demo
+    metadata:
+      name: cli-eksrauto-227873180
+      region: us-east-1
+      tags:
+        build_num: dev-master-496
+        creation_time: "2026-10-10T09:50:01Z"
+        email: automation-user@rafay.co
+        env: automation
+        squad: dev
+      version: "1.36"
+    nodeGroups:
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 1
+      instanceType: t3.large
+      name: cli-eksngrauto-227873180
+      privateNetworking: true
+      version: "1.36"
+    vpc:
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: false
+  type: aws-eks
