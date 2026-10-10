@@ -68,10 +68,10 @@ spec:
       version: "1.32"
     nodeGroups:
     - amiFamily: AmazonLinux2
-      desiredCapacity: 1
+      desiredCapacity: 2
       instanceType: t3.xlarge
-      maxSize: 1
-      minSize: 1
+      maxSize: 2
+      minSize: 2
       name: cli-ngrauto-first-193302671
       privateNetworking: true
       version: "1.32"
