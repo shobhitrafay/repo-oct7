@@ -9,9 +9,7 @@ metadata:
 spec:
   blueprint:
     name: sj-bp
-    optionalAddons:
-    - sj-addon2
-    version: v3
+    version: v2yaml-test
   cloudCredentials: shobhit_gcp
   config:
     controlPlaneVersion: "1.34"
