@@ -1,6 +1,8 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
+  labels:
+    type: mks
   name: rauto-mks-terraform-72679962
   project: defaultproject
 spec:
