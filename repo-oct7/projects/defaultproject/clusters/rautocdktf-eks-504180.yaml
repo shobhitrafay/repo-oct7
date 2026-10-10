@@ -41,6 +41,22 @@ spec:
       version: "1.35"
       volumeEncrypted: false
       volumeType: gp3
+    - amiFamily: WindowsServer2022CoreContainer
+      desiredCapacity: 1
+      disableIMDSv1: false
+      disablePodIMDS: false
+      ebsOptimized: false
+      efaEnabled: false
+      enableDetailedMonitoring: false
+      instanceType: t3a.xlarge
+      maxSize: 2
+      minSize: 1
+      name: rauto-ng-windows-504180
+      privateNetworking: true
+      spot: false
+      version: "1.35"
+      volumeEncrypted: false
+      volumeType: gp3
     metadata:
       name: rautocdktf-eks-504180
       region: us-east-1
