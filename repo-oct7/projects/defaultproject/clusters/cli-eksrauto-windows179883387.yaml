@@ -49,7 +49,7 @@ spec:
         - system:masters
         username: automation
     managedNodeGroups:
-    - ami: ami-0a38f0138ef08de96
+    - ami: ami-0a5ac143a9a02d0e9
       desiredCapacity: 1
       instanceType: t3.xlarge
       maxSize: 1
