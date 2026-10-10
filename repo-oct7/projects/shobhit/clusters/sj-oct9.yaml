@@ -13,7 +13,9 @@ metadata:
 spec:
   blueprintConfig:
     name: sj-bp
-    version: v3
+    optionalAddons:
+    - sj-addon1
+    version: v4
   cloudCredentials: shobhit_azure
   config:
     kind: aksClusterConfig
