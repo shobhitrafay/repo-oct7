@@ -13,7 +13,8 @@ spec:
       version: latest
     - name: kube-proxy
       version: latest
-    - name: vpc-cni
+    - configurationValues: '{"enableWindowsIpam":"true"}'
+      name: vpc-cni
       version: latest
     - name: aws-ebs-csi-driver
       version: latest
@@ -41,7 +42,7 @@ spec:
       version: "1.35"
       volumeEncrypted: false
       volumeType: gp3
-    - ami: ami-0e877121c23226906
+    - ami: ami-066854f37a9f76224
       desiredCapacity: 1
       disableIMDSv1: false
       disablePodIMDS: false
