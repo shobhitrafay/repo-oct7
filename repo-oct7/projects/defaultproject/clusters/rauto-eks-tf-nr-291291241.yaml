@@ -38,7 +38,7 @@ spec:
       minSize: 1
       name: ng-node-repair-291291241
       nodeRepairConfig:
-        enabled: false
+        enabled: true
         maxParallelNodesRepairedPercentage: 10
         maxUnhealthyNodeThresholdPercentage: 20
         nodeRepairConfigOverrides:
