@@ -9,7 +9,7 @@ metadata:
 spec:
   blueprint:
     name: sj-bp
-    version: v3
+    version: v4
   cloudCredentials: shobhit_gcp
   config:
     controlPlaneVersion: "1.34"
