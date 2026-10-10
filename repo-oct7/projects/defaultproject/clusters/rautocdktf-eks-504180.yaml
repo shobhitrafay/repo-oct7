@@ -1,12 +1,12 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rautocdktf-eks-773448
+  name: rautocdktf-eks-504180
   project: defaultproject
 spec:
   blueprintConfig:
     name: default
-  cloudCredentials: rautocdktf-cloudp-773448
+  cloudCredentials: rautocdktf-cloudp-504180
   config:
     addons:
     - name: coredns
@@ -33,39 +33,29 @@ spec:
       efaEnabled: false
       enableDetailedMonitoring: false
       instanceType: t3a.xlarge
+      labels:
+        key: rauto
       maxSize: 2
       minSize: 1
       name: rauto-ngmanaged0
       privateNetworking: true
       spot: false
+      taints:
+      - effect: NoSchedule
+        key: nodetaint
+        value: rauto
       version: "1.35"
       volumeEncrypted: false
       volumeType: gp3
-    - ami: ami-0e877121c23226906
-      desiredCapacity: 1
-      disableIMDSv1: false
-      disablePodIMDS: false
-      ebsOptimized: false
-      efaEnabled: false
-      enableDetailedMonitoring: false
-      instanceType: t3a.xlarge
-      maxSize: 2
-      minSize: 1
-      name: rauto-ng-windows
-      overrideBootstrapCommand: '[Windows]'
-      privateNetworking: true
-      spot: false
-      volumeEncrypted: false
-      volumeType: gp3
     metadata:
-      name: rautocdktf-eks-773448
+      name: rautocdktf-eks-504180
       region: us-east-1
       tags:
         build_num: dev-master-495
         email: automation@rafay.co
         env: automation
         squad: dev
-      version: "1.36"
+      version: "1.35"
     network:
       cni:
         name: aws-cni
@@ -77,4 +67,15 @@ spec:
         publicAccess: false
       nat:
         gateway: Single
+  systemComponentsPlacement:
+    daemonSetOverride:
+      tolerations:
+      - operator: Exists
+    nodeSelector:
+      key: rauto
+    tolerations:
+    - effect: NoSchedule
+      key: nodetaint
+      operator: Equal
+      value: rauto
   type: aws-eks
