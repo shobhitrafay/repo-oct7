@@ -59,7 +59,7 @@ spec:
         email: automation@rafay.co
         env: automation
         squad: dev
-      version: "1.31"
+      version: "1.32"
     network:
       cni:
         name: aws-cni
