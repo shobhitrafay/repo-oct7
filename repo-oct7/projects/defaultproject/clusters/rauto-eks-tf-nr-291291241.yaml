@@ -42,11 +42,11 @@ spec:
         maxParallelNodesRepairedPercentage: 20
         maxUnhealthyNodeThresholdPercentage: 30
         nodeRepairConfigOverrides:
-        - minRepairWaitTimeMins: 20
+        - minRepairWaitTimeMins: 30
           nodeMonitoringCondition: NetworkingReady
           nodeUnhealthyReason: ContainerRuntimeFailed
           repairAction: Replace
-        - minRepairWaitTimeMins: 10
+        - minRepairWaitTimeMins: 20
           nodeMonitoringCondition: Ready
           nodeUnhealthyReason: ContainerRuntimeFailed
           repairAction: Replace
