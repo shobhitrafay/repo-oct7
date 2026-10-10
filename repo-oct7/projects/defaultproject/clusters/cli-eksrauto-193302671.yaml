@@ -67,7 +67,7 @@ spec:
         email: automation-user@rafay.co
         env: automation
         squad: dev
-        tags-day2: eks-tags-day-2-test
+        tags-day2: edited-on-day-2
       version: "1.32"
     nodeGroups:
     - amiFamily: AmazonLinux2
