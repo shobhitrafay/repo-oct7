@@ -115,6 +115,18 @@ spec:
       version: "1.34"
       volumeSize: 80
       volumeType: gp3
+    - amiFamily: Bottlerocket
+      desiredCapacity: 1
+      instanceType: t3.xlarge
+      maxSize: 1
+      minSize: 1
+      name: add-ng-selfmanaged-default-Bottlerocket-179883387
+      privateNetworking: true
+      tags:
+        email: automation-user@rafay.co
+        env: automation
+      volumeSize: 80
+      volumeType: gp3
     secretsEncryption:
       encryptExistingSecrets: true
       keyARN: arn:aws:kms:us-east-1:211125364662:key/d30cd169-de6e-43e5-9f06-0a8eab64c2d8
