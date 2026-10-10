@@ -18,5 +18,5 @@ spec:
   driftWebhook:
     enabled: true
   type: custom
-  version: v1.0
-  versionState: active
+  version: v4
+  versionState: disable
