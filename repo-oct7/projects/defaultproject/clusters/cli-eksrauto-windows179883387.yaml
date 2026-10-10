@@ -9,6 +9,14 @@ spec:
   cloudCredentials: cli-cprauto-179883387
   config:
     accessConfig:
+      accessEntries:
+      - accessPolicies:
+        - accessScope:
+            type: cluster
+          policyARN: arn:aws:eks::aws:cluster-access-policy/AmazonEKSViewPolicy
+        kubernetesUsername: rauto-entry
+        principalARN: arn:aws:iam::679196758854:user/kalyan@rafay.co
+        type: STANDARD
       authenticationMode: API_AND_CONFIG_MAP
       bootstrapClusterCreatorAdminPermissions: true
     addons:
