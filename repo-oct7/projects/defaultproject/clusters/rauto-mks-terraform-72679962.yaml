@@ -52,6 +52,14 @@ spec:
       - effect: NoSchedule
         key: app
         value: infra
+    - arch: arm64
+      hostname: rauto-sdk-1791661225-154943
+      operatingSystem: Ubuntu22.04
+      privateIP: 10.0.0.156
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 129.146.7.127
   systemComponentsPlacement:
     nodeSelector:
       app: infra
