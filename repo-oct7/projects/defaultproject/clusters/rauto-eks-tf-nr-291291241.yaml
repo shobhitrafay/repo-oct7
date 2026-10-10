@@ -26,7 +26,6 @@ spec:
       enabled: true
       outcomeAlarms:
       - arn:aws:cloudwatch:us-east-1:211125364662:alarm:rauto-arc-zonal-outcome-alarm-1
-      - arn:aws:cloudwatch:us-east-1:211125364662:alarm:rauto-arc-zonal-outcome-alarm-2
     availabilityZones:
     - us-east-1a
     - us-east-1b
