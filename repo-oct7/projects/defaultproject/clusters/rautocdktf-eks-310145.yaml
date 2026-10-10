@@ -1,13 +1,16 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rautocdktf-eks-823244
+  name: rautocdktf-eks-310145
   project: defaultproject
 spec:
   blueprintConfig:
     name: default
-  cloudCredentials: rautocdktf-cloudp-823244
+  cloudCredentials: rautocdktf-cloudp-310145
   config:
+    accessConfig:
+      authenticationMode: CONFIG_MAP
+      bootstrapClusterCreatorAdminPermissions: true
     addons:
     - name: coredns
       version: latest
@@ -23,27 +26,9 @@ spec:
     - us-east-1c
     - us-east-1d
     - us-east-1f
-    cloudWatch:
-      clusterLogging: {}
-    deleteProtection:
-      enabled: true
-    iam:
-      serviceAccounts:
-      - metadata:
-          name: rauto-test-sa
-          namespace: rafay-system
-        roleOnly: true
-        wellKnownPolicies:
-          autoScaler: false
-          awsLoadBalancerController: true
-          certManager: false
-          ebsCSIController: false
-          efsCSIController: false
-          externalDNS: false
-          imageBuilder: false
-      withOIDC: true
+    cloudWatch: {}
     managedNodeGroups:
-    - amiFamily: AmazonLinux2
+    - ami: ami-06d9bcac32f727ddb
       desiredCapacity: 1
       disableIMDSv1: false
       disablePodIMDS: false
@@ -56,18 +41,17 @@ spec:
       name: rauto-ngmanaged0
       privateNetworking: true
       spot: false
-      version: "1.32"
       volumeEncrypted: false
       volumeType: gp3
     metadata:
-      name: rautocdktf-eks-823244
+      name: rautocdktf-eks-310145
       region: us-east-1
       tags:
         build_num: dev-master-495
         email: automation@rafay.co
         env: automation
         squad: dev
-      version: "1.32"
+      version: "1.31"
     network:
       cni:
         name: aws-cni
