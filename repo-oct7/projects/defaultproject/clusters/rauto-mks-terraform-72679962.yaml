@@ -22,6 +22,14 @@ spec:
       serviceSubnet: 10.96.0.0/12
     nodes:
     - arch: amd64
+      hostname: rauto-sdk-1791658712-228456
+      operatingSystem: Ubuntu22.04
+      privateIP: 10.0.0.32
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 129.146.59.252
+    - arch: amd64
       hostname: rauto-sdk-1791658583-377977
       operatingSystem: Ubuntu22.04
       privateIP: 10.0.0.163
@@ -44,22 +52,6 @@ spec:
       - effect: NoSchedule
         key: app
         value: infra
-    - arch: amd64
-      hostname: rauto-sdk-1791658712-228456
-      operatingSystem: Ubuntu22.04
-      privateIP: 10.0.0.32
-      roles:
-      - Worker
-      ssh:
-        ipAddress: 129.146.59.252
-    - arch: arm64
-      hostname: rauto-sdk-1791661225-154943
-      operatingSystem: Ubuntu22.04
-      privateIP: 10.0.0.156
-      roles:
-      - Worker
-      ssh:
-        ipAddress: 129.146.7.127
   systemComponentsPlacement:
     nodeSelector:
       app: infra
