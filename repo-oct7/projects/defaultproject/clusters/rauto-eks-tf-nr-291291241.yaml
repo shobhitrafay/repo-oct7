@@ -59,6 +59,8 @@ spec:
           repairAction: Replace
       privateNetworking: true
       spot: false
+      tags:
+        nodegroup-tag-test: "82002772"
       version: "1.34"
       volumeEncrypted: false
       volumeSize: 80
