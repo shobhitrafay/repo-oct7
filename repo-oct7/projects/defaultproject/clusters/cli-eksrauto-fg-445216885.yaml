@@ -1,0 +1,83 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: cli-eksrauto-fg-445216885
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: minimal
+  cloudCredentials: cli-cprauto-445216885
+  config:
+    accessConfig:
+      accessEntries:
+      - accessPolicies:
+        - accessScope:
+            type: cluster
+          policyARN: arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy
+        kubernetesUsername: kalyan-rafay
+        principalARN: arn:aws:iam::679196758854:user/kalyan@rafay.co
+        type: STANDARD
+      authenticationMode: API
+      bootstrapClusterCreatorAdminPermissions: true
+    addons:
+    - name: vpc-cni
+      version: latest
+    - name: coredns
+      version: latest
+    - name: kube-proxy
+      version: latest
+    - name: aws-ebs-csi-driver
+      version: latest
+    fargateProfiles:
+    - name: rauto-fg-1
+      selectors:
+      - namespace: rafay-system
+      - namespace: kube-system
+      - namespace: sasdada
+    - name: rauto-fg-2
+      selectors:
+      - namespace: f1
+      tags:
+        email: automation@rafay.co
+        env: dev
+        key1: val1
+    - name: rauto-fg-3
+      selectors:
+      - namespace: f1
+      - namespace: f2
+      tags:
+        email: automation@rafay.co
+        env: dev
+        key1: val1
+    metadata:
+      name: cli-eksrauto-fg-445216885
+      region: us-east-1
+      tags:
+        build_num: dev-master-496
+        creation_time: "2026-10-10T10:50:01Z"
+        email: automation-user@rafay.co
+        env: automation
+        squad: dev
+      version: "1.35"
+    vpc:
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: false
+      controlPlaneSecurityGroupIDs:
+      - sg-024159ff2be4fb66e
+      - sg-00a5f7f665fd16a58
+      - sg-054cf1b6b9529c0bc
+      nat:
+        gateway: Single
+      subnets:
+        private:
+          subnet-06114706579ea10c0:
+            id: subnet-06114706579ea10c0
+          subnet-0c93348944b797969:
+            id: subnet-0c93348944b797969
+        public:
+          subnet-00afb1bd23c788794:
+            id: subnet-00afb1bd23c788794
+          subnet-097e192276767658d:
+            id: subnet-097e192276767658d
+  type: aws-eks
