@@ -115,6 +115,9 @@ spec:
       version: "1.34"
       volumeSize: 80
       volumeType: gp3
+    secretsEncryption:
+      encryptExistingSecrets: true
+      keyARN: arn:aws:kms:us-east-1:211125364662:key/d30cd169-de6e-43e5-9f06-0a8eab64c2d8
     vpc:
       cidr: 192.168.0.0/16
       clusterEndpoints:
