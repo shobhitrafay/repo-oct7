@@ -8,8 +8,9 @@ spec:
     name: rishabh-latest-bp
     optionalAddons:
     - hello-addon
+    - nginx-web
     - nginx-yaml
-    version: v2
+    version: v4
   cloudCredentials: shobhit_aws
   config:
     addons:
