@@ -72,5 +72,5 @@ spec:
         privateAccess: true
         publicAccess: false
     zonalShiftConfig:
-      enabled: true
+      enabled: false
   type: aws-eks
