@@ -42,6 +42,12 @@ spec:
         tags:
           irsatag: rauto-irsatag
       withOIDC: true
+    identityMappings:
+      arns:
+      - arn: arn:aws:iam::679196758854:user/automation-qa
+        group:
+        - system:masters
+        username: automation
     managedNodeGroups:
     - ami: ami-0a38f0138ef08de96
       desiredCapacity: 1
