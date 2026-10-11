@@ -79,17 +79,6 @@ spec:
         port: "22"
         privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/oci_key
         username: ubuntu
-    - arch: amd64
-      hostname: rauto-sdk-1791689615-688335
-      operatingSystem: Ubuntu24.04
-      privateIP: 10.0.0.195
-      roles:
-      - Worker
-      ssh:
-        ipAddress: 129.146.27.183
-        port: "22"
-        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/oci_key
-        username: ubuntu
     ssh:
       port: "22"
       privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/oci_key
