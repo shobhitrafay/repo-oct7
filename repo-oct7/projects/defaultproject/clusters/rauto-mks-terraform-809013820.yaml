@@ -42,7 +42,7 @@ spec:
         username: ubuntu
     - arch: amd64
       hostname: ip-172-31-17-120
-      kubeletConfigurationOverrides: 'maxPods: 150'
+      kubeletConfigurationOverrides: 'maxPods: 300'
       kubeletExtraArgs:
         cpu-manager-reconcile-period: 30s
       labels:
