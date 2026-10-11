@@ -21,6 +21,19 @@ spec:
       serviceSubnet: 10.96.0.0/12
     nodes:
     - arch: amd64
+      hostname: ip-172-31-28-111
+      operatingSystem: Ubuntu24.04
+      privateIP: 172.31.28.111
+      roles:
+      - Worker
+      - ControlPlane
+      - Storage
+      ssh:
+        ipAddress: 54.89.37.25
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
       hostname: ip-172-31-21-88
       operatingSystem: Ubuntu24.04
       privateIP: 172.31.21.88
@@ -43,19 +56,6 @@ spec:
       - Storage
       ssh:
         ipAddress: 3.93.1.129
-        port: "22"
-        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
-        username: ubuntu
-    - arch: amd64
-      hostname: ip-172-31-28-111
-      operatingSystem: Ubuntu24.04
-      privateIP: 172.31.28.111
-      roles:
-      - Worker
-      - ControlPlane
-      - Storage
-      ssh:
-        ipAddress: 54.89.37.25
         port: "22"
         privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
         username: ubuntu
