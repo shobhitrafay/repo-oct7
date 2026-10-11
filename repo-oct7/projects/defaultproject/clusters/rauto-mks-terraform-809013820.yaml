@@ -13,11 +13,21 @@ spec:
     kubernetesVersion: v1.36.4
     network:
       cni:
-        name: Calico
-        version: 3.26.1
+        name: CNI-via-Blueprint
       podSubnet: 10.244.0.0/16
       serviceSubnet: 10.96.0.0/12
     nodes:
+    - arch: amd64
+      hostname: ip-172-31-28-217
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.28.217
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 54.90.143.177
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
     - arch: amd64
       hostname: ip-172-31-17-120
       kubeletConfigurationOverrides: 'maxPods: 150'
@@ -38,17 +48,6 @@ spec:
       - effect: NoSchedule
         key: nodetaint
         value: rauto
-    - arch: amd64
-      hostname: ip-172-31-28-217
-      operatingSystem: Ubuntu22.04
-      privateIP: 172.31.28.217
-      roles:
-      - Worker
-      ssh:
-        ipAddress: 54.90.143.177
-        port: "22"
-        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
-        username: ubuntu
     - arch: amd64
       hostname: ip-172-31-30-164
       operatingSystem: Ubuntu22.04
