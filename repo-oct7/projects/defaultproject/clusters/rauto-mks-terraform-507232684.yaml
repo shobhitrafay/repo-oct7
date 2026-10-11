@@ -5,7 +5,7 @@ metadata:
   project: defaultproject
 spec:
   blueprint:
-    name: minimal
+    name: default
     version: latest
   config:
     autoApproveNodes: true
@@ -31,18 +31,6 @@ spec:
         privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/oci_key
         username: ubuntu
     - arch: amd64
-      hostname: rauto-sdk-1791685384-901031
-      operatingSystem: Ubuntu24.04
-      privateIP: 10.0.0.249
-      roles:
-      - ControlPlane
-      - Worker
-      ssh:
-        ipAddress: 129.146.112.55
-        port: "22"
-        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/oci_key
-        username: ubuntu
-    - arch: amd64
       hostname: rauto-sdk-1791685449-180248
       operatingSystem: Ubuntu24.04
       privateIP: 10.0.0.207
@@ -55,17 +43,6 @@ spec:
         privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/oci_key
         username: ubuntu
     - arch: amd64
-      hostname: rauto-sdk-1791685513-143371
-      operatingSystem: Ubuntu24.04
-      privateIP: 10.0.0.66
-      roles:
-      - Worker
-      ssh:
-        ipAddress: 141.148.189.42
-        port: "22"
-        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/oci_key
-        username: ubuntu
-    - arch: amd64
       hostname: rauto-sdk-1791685319-249197
       operatingSystem: Ubuntu24.04
       privateIP: 10.0.0.51
@@ -74,6 +51,29 @@ spec:
       - Worker
       ssh:
         ipAddress: 129.146.63.235
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/oci_key
+        username: ubuntu
+    - arch: amd64
+      hostname: rauto-sdk-1791685384-901031
+      operatingSystem: Ubuntu24.04
+      privateIP: 10.0.0.249
+      roles:
+      - ControlPlane
+      - Worker
+      ssh:
+        ipAddress: 129.146.112.55
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/oci_key
+        username: ubuntu
+    - arch: amd64
+      hostname: rauto-sdk-1791685513-143371
+      operatingSystem: Ubuntu24.04
+      privateIP: 10.0.0.66
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 141.148.189.42
         port: "22"
         privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/oci_key
         username: ubuntu

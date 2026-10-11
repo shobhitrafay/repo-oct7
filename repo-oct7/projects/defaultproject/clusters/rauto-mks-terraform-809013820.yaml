@@ -35,6 +35,7 @@ spec:
         cpu-manager-reconcile-period: 30s
       labels:
         key: rauto
+        key1: rauto1
       operatingSystem: Ubuntu22.04
       privateIP: 172.31.17.120
       roles:
@@ -48,6 +49,9 @@ spec:
       - effect: NoSchedule
         key: nodetaint
         value: rauto
+      - effect: NoSchedule
+        key: nodetaint1
+        value: rauto1
     - arch: amd64
       hostname: ip-172-31-30-164
       operatingSystem: Ubuntu22.04
