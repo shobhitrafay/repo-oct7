@@ -22,6 +22,7 @@ spec:
       kubeletConfigurationOverrides: 'maxPods: 150'
       kubeletExtraArgs:
         cpu-manager-reconcile-period: 30s
+        max-pods: "50"
       labels:
         key: rauto
       operatingSystem: Ubuntu22.04
