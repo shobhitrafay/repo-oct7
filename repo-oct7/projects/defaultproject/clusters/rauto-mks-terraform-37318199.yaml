@@ -11,7 +11,7 @@ spec:
   config:
     autoApproveNodes: true
     installerTtl: 365
-    kubernetesVersion: v1.36.4
+    kubernetesVersion: v1.37.0
     network:
       cni:
         name: Calico
@@ -20,14 +20,13 @@ spec:
       serviceSubnet: 10.96.0.0/12
     nodes:
     - arch: amd64
-      hostname: rauto-sdk-1791685478-80614
+      hostname: rauto-sdk-1791685616-068131
       operatingSystem: Ubuntu22.04
-      privateIP: 10.0.0.211
+      privateIP: 10.0.0.60
       roles:
-      - ControlPlane
       - Worker
       ssh:
-        ipAddress: 161.153.83.135
+        ipAddress: 129.146.63.243
     - arch: amd64
       hostname: rauto-sdk-1791685551-59204
       labels:
@@ -43,13 +42,14 @@ spec:
         key: app
         value: infra
     - arch: amd64
-      hostname: rauto-sdk-1791685616-068131
+      hostname: rauto-sdk-1791685478-80614
       operatingSystem: Ubuntu22.04
-      privateIP: 10.0.0.60
+      privateIP: 10.0.0.211
       roles:
+      - ControlPlane
       - Worker
       ssh:
-        ipAddress: 129.146.63.243
+        ipAddress: 161.153.83.135
   systemComponentsPlacement:
     nodeSelector:
       app: infra
