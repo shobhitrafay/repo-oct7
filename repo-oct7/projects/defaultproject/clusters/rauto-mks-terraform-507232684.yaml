@@ -1,0 +1,84 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: rauto-mks-terraform-507232684
+  project: defaultproject
+spec:
+  blueprint:
+    name: minimal
+    version: latest
+  config:
+    autoApproveNodes: true
+    highAvailability: true
+    installerTtl: 365
+    kubernetesVersion: v1.36.4
+    network:
+      cni:
+        name: Calico
+        version: 3.26.1
+      podSubnet: 10.244.0.0/16
+      serviceSubnet: 10.96.0.0/12
+    nodes:
+    - arch: amd64
+      hostname: rauto-sdk-1791685513-143371
+      operatingSystem: Ubuntu24.04
+      privateIP: 10.0.0.66
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 141.148.189.42
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/oci_key
+        username: ubuntu
+    - arch: amd64
+      hostname: rauto-sdk-1791685577-195106
+      operatingSystem: Ubuntu24.04
+      privateIP: 10.0.0.85
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 161.153.57.232
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/oci_key
+        username: ubuntu
+    - arch: amd64
+      hostname: rauto-sdk-1791685319-249197
+      operatingSystem: Ubuntu24.04
+      privateIP: 10.0.0.51
+      roles:
+      - ControlPlane
+      - Worker
+      ssh:
+        ipAddress: 129.146.63.235
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/oci_key
+        username: ubuntu
+    - arch: amd64
+      hostname: rauto-sdk-1791685384-901031
+      operatingSystem: Ubuntu24.04
+      privateIP: 10.0.0.249
+      roles:
+      - ControlPlane
+      - Worker
+      ssh:
+        ipAddress: 129.146.112.55
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/oci_key
+        username: ubuntu
+    - arch: amd64
+      hostname: rauto-sdk-1791685449-180248
+      operatingSystem: Ubuntu24.04
+      privateIP: 10.0.0.207
+      roles:
+      - ControlPlane
+      - Worker
+      ssh:
+        ipAddress: 129.146.36.39
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/oci_key
+        username: ubuntu
+    ssh:
+      port: "22"
+      privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/oci_key
+      username: ubuntu
+  type: mks
