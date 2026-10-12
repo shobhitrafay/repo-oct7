@@ -4,6 +4,20 @@ metadata:
   name: gke-rc
   project: defaultproject
 spec:
+  base:
+    name: minimal
+    version: 4.3.1
+  customAddons:
+  - name: hello-addon
+    version: v1
+  - isOptional: true
+    name: simple-addon
+    version: v1
+  defaultAddons:
+    monitoring:
+      gpuOperator: {}
   driftWebhook:
     enabled: true
   type: custom
+  version: v1
+  versionState: active
