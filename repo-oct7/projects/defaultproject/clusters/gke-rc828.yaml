@@ -6,7 +6,7 @@ metadata:
 spec:
   blueprint:
     name: gke-rc
-    version: v1
+    version: v2
   cloudCredentials: shobhit_gcp
   config:
     controlPlaneVersion: "1.35"
