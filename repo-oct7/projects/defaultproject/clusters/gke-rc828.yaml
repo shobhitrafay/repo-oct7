@@ -6,9 +6,7 @@ metadata:
 spec:
   blueprint:
     name: gke-rc
-    optionalAddons:
-    - hello-addon
-    version: v2
+    version: v1
   cloudCredentials: shobhit_gcp
   config:
     controlPlaneVersion: "1.35"
