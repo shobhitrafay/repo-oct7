@@ -76,4 +76,9 @@ spec:
             id: subnet-097e192276767658d
     zonalShiftConfig: {}
   proxyConfig: {}
+  sharing:
+    enabled: true
+    projects:
+    - name: rauto-infra-test-project
+    - name: rauto-platform-test-project
   type: aws-eks
