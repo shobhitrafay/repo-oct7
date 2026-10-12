@@ -1,15 +1,17 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Blueprint
 metadata:
-  name: rauto-test-bp-166093653
+  name: rauto-bp-tgl-draft-active-936131
   project: defaultproject
 spec:
   base:
     name: default
     version: 4.3.1
   customAddons:
-  - name: rauto-test-addon-166093653
-    version: rautoV1
+  - name: rauto-tgl-ad1-936131
+    version: v1
+  - name: rauto-tgl-ad2-936131
+    version: v1
   defaultAddons:
     enableIngress: true
     enableLocalStorage: true
@@ -19,5 +21,5 @@ spec:
   driftWebhook:
     enabled: true
   type: custom
-  version: v1
+  version: v2
   versionState: active
