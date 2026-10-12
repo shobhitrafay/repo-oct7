@@ -9,7 +9,7 @@ metadata:
 spec:
   blueprintConfig:
     name: rauto-sfs-bp-932038265
-    version: v4
+    version: v1
   cloudCredentials: rauto_128680197
   config:
     accessConfig:
