@@ -1,0 +1,56 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: gcp-rc828
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: minimal
+    version: Latest
+  cloudCredentials: shobhit_aws
+  config:
+    accessConfig:
+      authenticationMode: CONFIG_MAP
+    addons:
+    - name: coredns
+      version: v1.13.2-eksbuild.50
+    - name: vpc-cni
+      version: v1.22.4-eksbuild.3
+    - name: kube-proxy
+      version: v1.35.3-eksbuild.29
+    addonsConfig: {}
+    autoModeConfig: {}
+    autoZonalShiftConfig: {}
+    deleteProtection:
+      enabled: false
+    managedNodeGroups:
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+      instanceTypes:
+      - m5.xlarge
+      maxSize: 2
+      minSize: 2
+      name: ng-61beb7e8
+      version: "1.35"
+      volumeSize: 80
+      volumeType: gp3
+    metadata:
+      name: gcp-rc828
+      region: us-west-2
+      version: "1.35"
+    network:
+      cni:
+        name: aws-cni
+    vpc:
+      cidr: 192.168.0.0/16
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: false
+      nat:
+        gateway: Single
+    zonalShiftConfig: {}
+  proxyConfig: {}
+  type: aws-eks
