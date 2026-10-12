@@ -19,4 +19,4 @@ spec:
     enabled: true
   type: custom
   version: v4
-  versionState: active
+  versionState: disable
