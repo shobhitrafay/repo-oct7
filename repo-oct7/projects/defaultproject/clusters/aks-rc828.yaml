@@ -7,8 +7,9 @@ spec:
   blueprintConfig:
     name: gke-rc
     optionalAddons:
+    - hello-addon
     - simple-addon
-    version: v1
+    version: v2
   cloudCredentials: shobhit_azure
   config:
     kind: aksClusterConfig
