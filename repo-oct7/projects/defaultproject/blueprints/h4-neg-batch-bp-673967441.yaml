@@ -1,0 +1,28 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: h4-neg-batch-bp-673967441
+  project: defaultproject
+spec:
+  base:
+    name: minimal
+    version: 4.3.1
+  customAddons:
+  - name: h4-neg-addon-corrupt-808363723
+    version: v1
+  - name: h4-neg-addon-malvals-297307956
+    version: v1
+  - name: h4-neg-addon-unhealthy-46321528
+    version: v1
+  - name: h4-neg-addon-gitchart-768984407
+    version: v1
+  - name: h4-neg-addon-multivals-734712979
+    version: v1
+  defaultAddons:
+    monitoring:
+      gpuOperator: {}
+  driftWebhook:
+    enabled: true
+  type: custom
+  version: v1
+  versionState: active
