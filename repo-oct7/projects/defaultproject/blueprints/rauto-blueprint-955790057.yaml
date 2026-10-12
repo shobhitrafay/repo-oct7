@@ -1,0 +1,30 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: rauto-blueprint-955790057
+  project: defaultproject
+spec:
+  base:
+    name: default
+    version: 4.3.1
+  customAddons:
+  - name: rauto-addon-955790057
+    version: rautoV1
+  - dependsOn:
+    - rauto-addon-955790057
+    - rauto-addon-multi-depend-955790057
+    name: rauto-addon-depend-955790057
+    version: rautoV1
+  - name: rauto-addon-multi-depend-955790057
+    version: rautoV1
+  defaultAddons:
+    enableIngress: true
+    enableLocalStorage: true
+    enableMonitoring: true
+    monitoring:
+      gpuOperator: {}
+  driftWebhook:
+    enabled: true
+  type: custom
+  version: rautoV1
+  versionState: active
