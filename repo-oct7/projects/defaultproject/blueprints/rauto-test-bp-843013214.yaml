@@ -1,0 +1,26 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: rauto-test-bp-843013214
+  project: defaultproject
+spec:
+  base:
+    name: default
+    version: 4.3.1
+  customAddons:
+  - name: rauto-test-addon-843013214
+    version: rautoV1
+  defaultAddons:
+    enableIngress: true
+    enableLocalStorage: true
+    enableMonitoring: true
+    monitoring:
+      gpuOperator: {}
+  drift:
+    action: Notify
+    enabled: true
+  driftWebhook:
+    enabled: true
+  type: custom
+  version: v1
+  versionState: active
