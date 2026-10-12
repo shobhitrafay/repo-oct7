@@ -5,8 +5,10 @@ metadata:
   project: defaultproject
 spec:
   blueprint:
-    name: minimal
-    version: latest
+    name: gke-rc
+    optionalAddons:
+    - simple-addon
+    version: v1
   cloudCredentials: shobhit_gcp
   config:
     controlPlaneVersion: "1.35"
