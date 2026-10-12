@@ -1,6 +1,8 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
+  labels:
+    rauto: label
   name: automation-boot-eks-2874
   project: defaultproject
 spec:
