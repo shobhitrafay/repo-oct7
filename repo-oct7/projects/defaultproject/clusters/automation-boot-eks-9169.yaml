@@ -77,8 +77,4 @@ spec:
             id: subnet-097e192276767658d
     zonalShiftConfig: {}
   proxyConfig: {}
-  sharing:
-    enabled: true
-    projects:
-    - name: '*'
   type: aws-eks
