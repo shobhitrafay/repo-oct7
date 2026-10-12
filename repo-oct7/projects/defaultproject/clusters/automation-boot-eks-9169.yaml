@@ -3,6 +3,7 @@ kind: Cluster
 metadata:
   labels:
     rauto: label
+    workload: test622590703
   name: automation-boot-eks-9169
   project: defaultproject
 spec:
@@ -79,6 +80,5 @@ spec:
   sharing:
     enabled: true
     projects:
-    - name: rauto-infra-test-project
-    - name: rauto-sharing-test-project
+    - name: '*'
   type: aws-eks
