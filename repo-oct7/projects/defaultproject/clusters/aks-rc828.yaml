@@ -9,7 +9,7 @@ spec:
     optionalAddons:
     - hello-addon
     - simple-addon
-    version: v3
+    version: v2
   cloudCredentials: shobhit_azure
   config:
     kind: aksClusterConfig
