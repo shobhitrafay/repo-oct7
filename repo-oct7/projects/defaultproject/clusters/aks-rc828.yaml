@@ -5,7 +5,8 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: minimal
+    name: gke-rc
+    version: v1
   cloudCredentials: shobhit_azure
   config:
     kind: aksClusterConfig
