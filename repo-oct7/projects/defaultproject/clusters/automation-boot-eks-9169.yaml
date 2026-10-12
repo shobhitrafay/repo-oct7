@@ -3,7 +3,6 @@ kind: Cluster
 metadata:
   labels:
     rauto: label
-    workload: test789099675
   name: automation-boot-eks-9169
   project: defaultproject
 spec:
