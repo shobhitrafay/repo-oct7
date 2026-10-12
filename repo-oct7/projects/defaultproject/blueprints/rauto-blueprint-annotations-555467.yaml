@@ -1,0 +1,39 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  annotations:
+    123numericKey: startsWithNumber
+    base64Sample: SGVsbG8gV29ybGQ=
+    booleanString: "true"
+    camelCaseKeyTest: camelValue
+    cssInjection: body{background:red;}
+    currencyTest: '$100, , , '
+    emailExample: test.user+qa@example.co.in
+    filePathUnix: /usr/local/bin/run.sh
+    filePathWindows: C:\Program Files\Test\run.exe
+    floatValue: "98.76"
+    key-with-dashes: value-123
+    key.with.dots: dot.value
+    key_with_underscores: value_test
+    longText: This is a long text field used for testing multi-sentence data. It includes
+      punctuation, numbers (123), and unicode .
+    multipleSpaces: '     '
+    nonBreakingSpace: Hello World
+    nullString: "null"
+    numbersOnly: "1234567890"
+    punctuationOnly: . ,- -- ---
+    rightToLeftMark: abcdef
+    simpleText: hello world
+    spaceValue: ' '
+    specialChars1: '!@#$%^&*()'
+    urlExample: https://example.com
+    urlWithFragment: https://abc.com/page#section2
+    urlWithParams: https://test.com?q=hello&lang=en
+    uuidSample: 550e8400-e29b-41d4-a716-446655440000
+    zeroWidthSpace: HelloWorld
+  name: rauto-blueprint-annotations-555467
+  project: defaultproject
+spec:
+  driftWebhook:
+    enabled: true
+  type: custom
