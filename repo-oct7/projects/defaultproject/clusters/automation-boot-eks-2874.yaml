@@ -7,8 +7,8 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: rauto-sel-fs-bp-400175127
-    version: v1
+    name: minimal
+    version: latest
   cloudCredentials: rauto_182804084
   config:
     accessConfig:
