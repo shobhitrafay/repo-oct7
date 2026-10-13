@@ -7,7 +7,10 @@ metadata:
   project: shobhit
 spec:
   blueprint:
-    name: minimal
+    name: sj-bp
+    optionalAddons:
+    - sj-addon1
+    - sj-addon2
   config:
     installerTtl: 365
     kubernetesVersion: v1.35.4
