@@ -1,0 +1,35 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  labels:
+    type: mks
+  name: cluster-mks-from-rctl-verification
+  project: shobhit
+spec:
+  blueprint:
+    name: sj-bp
+    optionalAddons:
+    - sj-addon1
+    - sj-addon2
+    version: v2
+  config:
+    autoApproveNodes: true
+    kubernetesVersion: v1.34.7
+    location: sanjose-us
+    network:
+      cni:
+        name: Calico
+        version: 3.31.4
+      podSubnet: 10.244.0.0/16
+      serviceSubnet: 10.96.0.0/12
+    nodes:
+    - arch: amd64
+      hostname: ip-172-31-6-43
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.6.43
+      roles:
+      - ControlPlane
+      - Worker
+      ssh:
+        ipAddress: 100.26.134.125
+  type: mks

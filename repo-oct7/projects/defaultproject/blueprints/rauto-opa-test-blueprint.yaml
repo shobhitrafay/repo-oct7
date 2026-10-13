@@ -18,10 +18,10 @@ spec:
   opaPolicy:
     opaPolicy:
     - name: rauto-policy-donot-delete
-      version: "1"
+      version: "2"
     profile:
-      name: default
-      version: latest
+      name: rauto-profile-dnd
+      version: v1
   type: custom
-  version: "1"
+  version: "2"
   versionState: active

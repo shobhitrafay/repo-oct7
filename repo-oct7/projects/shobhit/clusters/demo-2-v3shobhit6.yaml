@@ -7,8 +7,8 @@ spec:
   blueprintConfig:
     name: sj-bp
     optionalAddons:
-    - sj-addon1
-    version: v2
+    - sj-addon2
+    version: v3
   cloudCredentials: shobhit_azure
   config:
     kind: aksClusterConfig
