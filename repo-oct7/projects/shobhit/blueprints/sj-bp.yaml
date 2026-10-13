@@ -17,8 +17,7 @@ spec:
     enableIngress: true
     enableMonitoring: true
     monitoring:
-      gpuOperator:
-        discovery: {}
+      gpuOperator: {}
       helmExporter:
         enabled: true
       kubeStateMetrics:
