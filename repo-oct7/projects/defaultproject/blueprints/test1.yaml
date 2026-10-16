@@ -7,14 +7,16 @@ spec:
   base:
     name: minimal
     version: 4.3.1
+  componentsCriticality:
+  - name: hello-addon
+  - name: nginx-yaml
+  - name: simple-addon
   customAddons:
   - name: hello-addon
     version: v1
-  - isOptional: true
-    name: nginx-yaml
+  - name: nginx-yaml
     version: v1
-  - isOptional: true
-    name: simple-addon
+  - name: simple-addon
     version: v1
   defaultAddons:
     monitoring:
@@ -22,5 +24,5 @@ spec:
   driftWebhook:
     enabled: true
   type: custom
-  version: v1
+  version: v3
   versionState: active
