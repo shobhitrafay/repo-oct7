@@ -7,9 +7,9 @@ spec:
   blueprintConfig:
     name: rishabh-latest-bp
     optionalAddons:
-    - hello-addon
     - nginx-yaml
-    version: v1
+    - hello-addon
+    version: v2
   cloudCredentials: shobhit_aws
   config:
     addons:
