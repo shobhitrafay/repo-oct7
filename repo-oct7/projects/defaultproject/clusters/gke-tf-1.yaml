@@ -7,9 +7,9 @@ spec:
   blueprint:
     name: rishabh-latest-bp
     optionalAddons:
-    - nginx-yaml
+    - simple-addon
     - hello-addon
-    version: v1
+    version: v2
   cloudCredentials: shobhit_gcp
   config:
     controlPlaneVersion: "1.35"
