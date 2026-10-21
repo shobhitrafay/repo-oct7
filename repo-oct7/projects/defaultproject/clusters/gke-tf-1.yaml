@@ -9,7 +9,8 @@ spec:
     optionalAddons:
     - simple-addon
     - nginx-yaml
-    version: v1
+    - hello-addon
+    version: v2
   cloudCredentials: shobhit_gcp
   config:
     controlPlaneVersion: "1.35"
