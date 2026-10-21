@@ -33,7 +33,7 @@ spec:
       minSize: 1
       name: ng-1
       spot: false
-      version: "1.32"
+      version: "1.35"
       volumeEncrypted: false
       volumeType: gp3
     metadata:
