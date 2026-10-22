@@ -8,7 +8,7 @@ spec:
     name: rishabh-latest-bp
     optionalAddons:
     - simple-addon
-    version: v1
+    version: v2
   cloudCredentials: shobhit_gcp
   config:
     controlPlaneVersion: "1.35"
