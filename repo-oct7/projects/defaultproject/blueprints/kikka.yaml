@@ -15,6 +15,10 @@ spec:
       gpuOperator: {}
   driftWebhook:
     enabled: true
+  sharing:
+    enabled: true
+    projects:
+    - name: '*'
   type: custom
   version: v1
   versionState: active
