@@ -7,9 +7,11 @@ spec:
   blueprint:
     name: rishabh-latest-bp
     optionalAddons:
-    - simple-addon
     - hello-addon
-    version: v2
+    - abcdefgh
+    - nginx-web
+    - simple-addon
+    version: v4
   cloudCredentials: shobhit_gcp
   config:
     controlPlaneVersion: "1.35"
