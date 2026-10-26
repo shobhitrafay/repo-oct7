@@ -9,6 +9,7 @@ spec:
     optionalAddons:
     - hello-addon
     - nginx-yaml
+    - simple-addon
     version: v1
   cloudCredentials: shobhit_azure
   config:
