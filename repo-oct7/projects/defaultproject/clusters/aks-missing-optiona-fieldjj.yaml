@@ -6,12 +6,7 @@ metadata:
 spec:
   blueprintConfig:
     name: rishabh-latest-bp
-    optionalAddons:
-    - abcdefgh
-    - nginx-web
-    - hello-addon
-    - nginx-yaml
-    version: v4
+    version: v1
   cloudCredentials: shobhit_azure
   config:
     kind: aksClusterConfig
