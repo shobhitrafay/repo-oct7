@@ -70,11 +70,6 @@ spec:
     profile:
       name: default
       version: latest
-  sharing:
-    enabled: true
-    projects:
-    - name: rauto-project-540028847
-    - name: rauto-project-one-540028847
   type: golden
   version: v2
   versionState: active

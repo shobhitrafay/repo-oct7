@@ -75,11 +75,6 @@ spec:
   placement:
     fleetValues:
     - custom-bp-eks-540028847
-  sharing:
-    enabled: true
-    projects:
-    - name: rauto-project-540028847
-    - name: rauto-project-one-540028847
   type: custom
   version: v3
   versionState: active
